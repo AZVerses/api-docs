@@ -1,0 +1,32 @@
+---
+title: 撤销订单
+position_number: 6
+type: post
+description: /az/future/trade/v1/order/cancel
+remark: Content-Type = application/x-www-form-urlencoded && application/json
+parameters:
+  - name: orderId
+    type: Integer
+    mandatory: true
+    default: N/A
+    description: 订单id
+    ranges:
+content_markdown: |-
+
+              #### **限流规则**
+
+              200/s/apikey
+right_code_blocks:
+  - code_block: |-
+      {
+        "error": {
+          "code": "",
+          "msg": ""
+        },
+        "msgInfo": "success",
+        "result": "554853671570656384", //订单id
+        "returnCode": 0
+      }
+    title: Response
+    language: json
+---
