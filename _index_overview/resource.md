@@ -8,8 +8,8 @@ content_markdown: >-
 
   #### Tutorials
 
-  Learn python spot trading step by step: [Python Spot Trading Tutorial](https://github.com/selinayiya/api-python-demo/blob/main/examples/spot_guide.ipynb)<br />
-  Learn python derivatives trading step by step: [Python Derivatives Trading Tutorial](https://github.com/selinayiya/api-python-demo/blob/main/examples/future_guide.ipynb)
+  Learn python spot trading step by step: [Python Spot Trading Tutorial](https://github.com/AZVerses/api-python-demo/blob/main/examples/spot_guide.ipynb)<br />
+  Learn python derivatives trading step by step: [Python Derivatives Trading Tutorial](https://github.com/AZVerses/api-python-demo/blob/main/examples/future_guide.ipynb)
 
 
   #### Python libraries
@@ -18,7 +18,7 @@ content_markdown: >-
 
   #### Java libraries
 
-  A lightweight Java code library: [Java SDK](https://github.com/selinayiya/api-java-demo)
+  A lightweight Java code library: [Java SDK](https://github.com/AZVerses/api-java-demo)
 
   #### Customer service
 
