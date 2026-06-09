@@ -5,6 +5,14 @@ type: post
 description: /az/spot/withdraw
 parameters:
     -
+        name: 'fromAccount'
+        type: string
+        mandatory: false
+        default: SPOT
+        description: >-
+               提现账户类型，现货或者是合约
+        ranges: SPOT; FUTURES_U
+    -
         name: 'currency'
         type: string
         mandatory: true

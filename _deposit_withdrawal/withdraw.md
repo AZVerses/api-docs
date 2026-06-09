@@ -5,6 +5,14 @@ type: post
 description: /az/spot/withdraw
 parameters:
     -
+        name: 'fromAccount'
+        type: string
+        mandatory: false
+        default: SPOT
+        description: >-
+          Withdrawal Account Type, Spot Account or Perpetual Account
+        ranges: SPOT; FUTURES_U
+    -
         name: 'currency'
         type: string
         mandatory: true
