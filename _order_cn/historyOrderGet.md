@@ -17,7 +17,7 @@ parameters:
         mandatory: false
         default:
         description: >-
-            业务类型  SPOT-现货, LEVER-杠杆
+            业务类型  SPOT-现货, PREDICTION-预测市场
         ranges:
     -
         name: side

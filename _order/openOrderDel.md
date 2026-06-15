@@ -17,7 +17,7 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: "SPOT, LEVER"
+        description: "SPOT, PREDICTION"
         ranges:
     -
         name: side
