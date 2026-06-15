@@ -80,7 +80,7 @@ tables:
         type: string
         mandatory: true
         default:
-        description: "SPOT, LEVER"
+        description: "SPOT, PREDICTION"
         ranges:
       -
         name: price
@@ -103,7 +103,13 @@ tables:
         default:
         description: amount. Required if it is the LIMIT price or the order is the market price when placing an order by amount
         ranges:
-
+      -
+        name: outcome
+        type: number
+        mandatory: false
+        default:
+        description: outcome. Required if it is the PREDICTION bizType; [1=YES;2=NO]
+        ranges:
 content_markdown: |-
                 #### **Note**
 

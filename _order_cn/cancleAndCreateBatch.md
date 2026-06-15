@@ -81,7 +81,7 @@ tables:
         mandatory: true
         default:
         description: >-
-          业务类型  SPOT-现货, LEVER-杠杆
+          业务类型  SPOT-现货, PREDICTION-预测市场
         ranges:
       -
         name: price
@@ -103,6 +103,13 @@ tables:
         mandatory: false
         default:
         description: 金额。限价不填；市价按金额下单时必填
+        ranges:
+      -
+        name: outcome
+        type: number
+        mandatory: false
+        default:
+        description: 预测市场结局资产[1=YES;2=NO]（bizType=PREDICTION 必填）
         ranges:
 
 content_markdown: |-
