@@ -20,9 +20,8 @@ content_markdown: |-
 
   #### **Note**
   
-  The accessToken is valid for 2 days. Calling the endpoint again will reset the validity period. 
+  The accessToken is valid for 1 days. Calling the endpoint again will reset the validity period. 
   
-  accessToken = listenKey
 left_code_blocks:
     -
         code_block:

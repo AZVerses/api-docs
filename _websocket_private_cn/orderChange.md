@@ -46,7 +46,9 @@ right_code_blocks:
                         "lq": "2",                      // leavingQty 待执行数量
                         "p": "4000",                    // price 价格
                         "ap": "30000",                  // avg price 均价
-                        "f": "0.001"                    // fee 手续费
+                        "f": "0.001",                   // fee 手续费
+                        "rfq": false,                   // 是否为 RFQ 订单
+                        "outcome": 1                    // 预测市场结局资产[1=YES,2=NO]
                     }
                 }
         title: 推送

@@ -15,17 +15,16 @@ parameters:
 content_markdown: |-
     **param format**
 
-    \{topic\}@\{arg\},\{arg\},…
+    \{topic\},\{topic\},…
 left_code_blocks:
     -
         code_block: |-
                 {
                     "method": "subscribe", 
                     "params": [
-                        "{topic}@{arg},{arg}",    //event
-                        "{topic}@{arg}"
+                        "{topic}",    //event
+                        "{topic}"
                     ], 
-                    "listenKey": "512312356123123123",   //the listener Key, Apply accessToken through /az/spot/ws-token interface
                     "id": "{id}"
                 }
         title: subscribe
@@ -35,10 +34,9 @@ left_code_blocks:
             {
                 "method": "unsubscribe", 
                 "params": [
-                    "{topic}@{arg},{arg}",    //event
-                    "{topic}@{arg}"
+                    "{topic}",    //event
+                    "{topic}"
                 ], 
-                "listenKey": "512312356123123123",   //the listener Key, Apply accessToken through /az/spot/ws-token interface
                 "id": "{id}"
             }
         title: unsubscribe
