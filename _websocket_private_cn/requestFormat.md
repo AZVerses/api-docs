@@ -15,17 +15,16 @@ parameters:
 content_markdown: |-
     **param结构**
 
-    \{topic\}@\{arg\},\{arg\},…
+    \{topic\},\{topic\},…
 left_code_blocks:
     -
         code_block: |-
                 {
                     "method": "subscribe", 
                     "params": [
-                        "{topic}@{arg},{arg}",    //event
-                        "{topic}@{arg}"
+                        "{topic}",    //event
+                        "{topic}"
                     ], 
-                    "listenKey": "512312356123123123",   //监听Key，先通过/az/spot/ws-token接⼝获取accessToken
                     "id": "{id}"
                 }
         title: 订阅
@@ -35,10 +34,9 @@ left_code_blocks:
             {
                 "method": "unsubscribe", 
                 "params": [
-                    "{topic}@{arg},{arg}",    //event
-                    "{topic}@{arg}"
+                    "{topic}",    //event
+                    "{topic}"
                 ], 
-                "listenKey": "512312356123123123",   //监听Key，先通过/az/spot/ws-token接⼝获取accessToken
                 "id": "{id}"
             }
         title: 取消订阅

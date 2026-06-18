@@ -46,7 +46,9 @@ right_code_blocks:
                         "lq": "2",                      // remaining quantity
                         "p": "4000",                    // price 
                         "ap": "30000",                  // avg price
-                        "f":"0.002"                     // fee 
+                        "f":"0.002",                    // fee 
+                        "rfq": false,                   // whether is RFQ order or not
+                        "outcome": 1                    // prediction market outcome [1=YES,2=NO]
                     }
                 }
         title: push
