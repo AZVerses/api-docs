@@ -15,15 +15,15 @@ parameters:
 content_markdown: |-
     **param结构**
 
-    \{topic\},\{topic\},…
+    \{topic\}@\{arg\},\{arg\},…
 left_code_blocks:
     -
         code_block: |-
                 {
                     "method": "subscribe", 
                     "params": [
-                        "{topic}",    //event
-                        "{topic}"
+                        "{topic}@{arg},{arg}",    //event
+                        "{topic}@{arg}"
                     ], 
                     "id": "{id}"
                 }
@@ -34,8 +34,8 @@ left_code_blocks:
             {
                 "method": "unsubscribe", 
                 "params": [
-                    "{topic}",    //event
-                    "{topic}"
+                    "{topic}@{arg},{arg}",    //event
+                    "{topic}@{arg}"
                 ], 
                 "id": "{id}"
             }

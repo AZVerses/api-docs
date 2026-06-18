@@ -24,6 +24,9 @@ content_markdown: |-
 
     ---
 
+    #### **Request Parameter**
+    <font color="#aa5500">?token={accessToken}</font> 
+    accessToken 从 /az/spot/ws-token 接口中获取
 
     #### **Request Headers**
 
