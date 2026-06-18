@@ -23,7 +23,9 @@ content_markdown: |-
 
 
     ---
-
+    #### **Request Parameter**
+    <font color="#aa5500">?token={accessToken}</font> 
+    accessToken come from /az/spot/ws-token
 
     #### **Request Headers**
 
