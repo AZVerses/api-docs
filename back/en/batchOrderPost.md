@@ -58,7 +58,7 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: "SPOT, LEVER"
+        description: "SPOT"
         ranges:
     -
         name: item.price

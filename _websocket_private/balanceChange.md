@@ -35,7 +35,7 @@ right_code_blocks:
                     "c": "btc",           // currency
                     "b": "123",           // all spot balance
                     "f": "11",            // frozen
-                    "z": "SPOT",           // bizType [SPOT,LEVER]
+                    "z": "SPOT",           // bizType [SPOT]
                     "s": "btc_usdt"       // symbol
                 }
             }

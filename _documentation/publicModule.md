@@ -62,10 +62,7 @@ content_markdown: >-
     | Status | Description |
     | --- | --- |
     | SPOT | spot account |
-    | LEVER | Leverage account |
-    | FINANCE | Financial account |
     | FUTURES_U | USDT-M futures account  |
-    | FUTURES_C | COIN-M futures account |
   
 
 left_code_blocks:

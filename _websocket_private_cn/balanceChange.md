@@ -35,7 +35,7 @@ right_code_blocks:
                         "c": "btc",           // currency 币种
                         "b": "123",           // balance 全部现货资产
                         "f": "11",            // frozen 冻结资产
-                        "z": "SPOT",          // bizType 业务类型[SPOT,LEVER]
+                        "z": "SPOT",          // bizType 业务类型[SPOT]
                         "s": "btc_usdt"       // symbol 交易市场  
                     }
                 }
