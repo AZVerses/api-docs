@@ -55,15 +55,15 @@ right_code_blocks:
                   "result": [
                     {
                       "s": "btc_usdt",      //symbol
-                      "t": 1661856036925,   //time 
+                      "ts": 1661856036925,  //time (ms)
                       "cv": "0.0000",       //price change value
-                      "cr": "0.00",         //price change rate
+                      "r": "0.00",          //price change rate
                       "o": "9000.0000",     //open price
                       "l": "9000.0000",     //lowest price
                       "h": "9000.0000",     //highest price
                       "c": "9000.0000",     //close price
-                      "q": "0.0136",        //transaction quantity
-                      "v": "122.9940"       //transaction volume
+                      "v": "0.0136",        //transaction quantity (base)
+                      "uv": "122.9940"      //transaction amount (quote)
                     }
                   ]
                 }

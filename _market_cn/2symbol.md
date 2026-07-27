@@ -28,6 +28,20 @@ parameters:
             版本号,当请求版本号与响应内容版本一致时，不返回清单，减少IO
             eg: 2e14d2cd5czcb2c2af2c1db65078d075
         ranges:
+    -
+        name: tags
+        type: string
+        mandatory: false
+        default:
+        description: '标签集合,逗号分割，当前仅支持 spot'
+        ranges:
+    -
+        name: type
+        type: string
+        mandatory: false
+        default: normal
+        description: '交易对类型, eg: normal/nft'
+        ranges:
 content_markdown: >-
     #### **限流规则**
 
@@ -242,7 +256,13 @@ right_code_blocks:
                       {
                         "id": 614,                                  //ID
                         "symbol": "btc_usdt",                       //交易对
+                        "displayName": "BTC/USDT",                  //展示名
+                        "displayNames": {                           //i18n展示名(键=语言码,en恒在)
+                          "en": "BTC/USDT"
+                        },
+                        "type": "normal",                           //交易对类型
                         "state": "ONLINE",                          //交易对状态[ONLINE=上线的;OFFLINE=下线的,DELISTED=退市]
+                        "stateTime": 1662444177871,                 //状态时间(ms)
                         "tradingEnabled": true,                     //启用交易
                         "openapiEnabled": true,                     //启用OPENAPI
                         "nextStateTime": null,                      //下一个状态时间
@@ -251,13 +271,22 @@ right_code_blocks:
                         "baseCurrency": "btc",                      //标的资产
                         "baseCurrencyPrecision": 5,                 //标的资产精度
                         "baseCurrencyId": 2,                        //标的资产ID
+                        "baseCurrencyLogo": "https://.../btc.png",  //标的资产Logo
                         "quoteCurrency": "usdt",                    //报价资产
                         "quoteCurrencyPrecision": 6,                //报价资产精度
                         "quoteCurrencyId": 11,                      //报价资产ID
                         "pricePrecision": 4,                        //交易价格精度
                         "quantityPrecision": 6,                     //交易数量精度
-                        "takerFeeRate": 0.001,                      //吃单手续费率
-                        "makerFeeRate": 0.002,                      //挂单手续费率
+                        "takerFeeRate": "0.001",                    //吃单手续费率(string)
+                        "makerFeeRate": "0.002",                    //挂单手续费率(string)
+                        "isBlack": false,                           //当前builder是否屏蔽
+                        "isRfq": false,                             //是否RFQ交易对
+                        "chainRelation": [                          //标的币种链地址
+                          {
+                            "chainId": 1,
+                            "contract": "0x..."
+                          }
+                        ],
                         "orderTypes": [                             //订单类型[LIMIT=限价单;MARKET=市价单]
                           "LIMIT",
                           "MARKET"

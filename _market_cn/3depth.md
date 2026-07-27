@@ -16,9 +16,9 @@ parameters:
         name: limit
         type: number
         mandatory: false
-        default: '100'
-        description: 数量，最小查询100条
-        ranges: 1~500
+        default: '50'
+        description: 有效最小100条(服务端对小于100的向上取100)
+        ranges: 1~1000
 content_markdown: >-
     #### **限流规则**
 
@@ -47,6 +47,7 @@ right_code_blocks:
                   "mc": "SUCCESS",
                   "ma": [],
                   "result": {
+                    "symbol": "btc_usdt",                //交易对
                     "timestamp": 1662445330524,          //时间戳
                     "lastUpdateId": 137333589606963580,  //最后更新记录
                     "bids": [                            //买盘([?][0]=价位;[?][1]=挂单量)

@@ -25,6 +25,13 @@ parameters:
         default:
         description: 'Set of tags, separated by commas, currently only supports spot'
         ranges:
+    -
+        name: type
+        type: string
+        mandatory: false
+        default: normal
+        description: 'symbol type, eg: normal'
+        ranges:
 content_markdown: >-
     #### **Limit Flow Rules**
 
@@ -58,15 +65,15 @@ right_code_blocks:
                 "result": [
                       {
                         "s": "btc_usdt",        //symbol
-                        "t": 1662444879425,     //update time
+                        "ts": 1662444879425,    //update time (ms)
                         "cv": "0.00",           //change value
-                        "cr": "0.0000",         //change rate
+                        "r": "0.0000",          //change rate
                         "o": "200.00",          //open
                         "l": "200.00",          //low
                         "h": "200.00",          //high
                         "c": "200.00",          //close
-                        "q": "0.002",           //quantity
-                        "v": "0.40",            //volume
+                        "v": "0.002",           //quantity (base)
+                        "uv": "0.40",           //volume (quote)
                         "ap": null,             //asks price(sell one price)
                         "aq": null,             //asks qty(sell one quantity)
                         "bp": null,             //bids price(buy one price)

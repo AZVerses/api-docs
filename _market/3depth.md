@@ -16,9 +16,9 @@ parameters:
         name: limit
         type: number
         mandatory: false
-        default: '100'
-        description: minimum number of queries is 100
-        ranges: 1~500
+        default: '50'
+        description: effective minimum is 100 (server floors small values to 100)
+        ranges: 1~1000
 content_markdown: >-
     #### **Limit Flow Rules**
     
@@ -46,6 +46,7 @@ right_code_blocks:
                   "mc": "SUCCESS",
                   "ma": [],
                   "result": {
+                    "symbol": "btc_usdt",
                     "timestamp": 1662445330524,  
                     "lastUpdateId": 137333589606963580,     //Last updated record
                     "bids": [                               //buy order([?][0]=price;[?][1]=pending order volume)

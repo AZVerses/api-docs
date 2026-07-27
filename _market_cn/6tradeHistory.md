@@ -60,16 +60,21 @@ right_code_blocks:
                   "ma": [
                     {}
                   ],
-                  "result": [
-                    {
-                      "i": 0,           //ID
-                      "t": 0,           //成交时间(time)
-                      "p": "string",    //成交价(price)
-                      "q": "string",    //成交量(quantity)
-                      "v": "string",    //成交额(volume)
-                      "b": true         //方向(buyerMaker)
-                    }
-                  ]
+                  "result": {
+                    "hasPrev": false,     //是否有上一页
+                    "hasNext": true,      //是否有下一页
+                    "items": [
+                      {
+                        "i": 0,           //ID
+                        "t": 0,           //成交时间(time)
+                        "s": "btc_usdt",  //交易对(symbol)
+                        "p": "string",    //成交价(price)
+                        "a": "string",    //成交量(quantity, base)
+                        "v": "string",    //成交额(volume, quote)
+                        "m": "BID"        //taker方向: BID或ASK
+                      }
+                    ]
+                  }
                 }
         title: Response
         language: json

@@ -58,9 +58,9 @@ right_code_blocks:
               "result": [
                 {
                   "s": "btc_usdt",      //symbol
-                  "t": 1661856036925    //time
-                  "p": "9000.0000",     //price
-                  }
+                  "ts": 1661856036925,  //time (ms)
+                  "p": "9000.0000"      //price
+                }
               ]
             }
         title: Response

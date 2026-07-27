@@ -49,10 +49,11 @@ right_code_blocks:
                     {
                       "i": 0,           //ID
                       "t": 0,           //成交时间(time)
+                      "s": "btc_usdt",  //交易对(symbol)
                       "p": "string",    //成交价(price)
-                      "q": "string",    //成交量(quantity)
-                      "v": "string",    //成交额(volume)
-                      "b": true         //方向(buyerMaker)
+                      "a": "string",    //成交量(quantity, base)
+                      "v": "string",    //成交额(volume, quote)
+                      "m": "BID"        //taker方向: BID或ASK
                     }
                   ]
                 }

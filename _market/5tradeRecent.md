@@ -49,10 +49,11 @@ right_code_blocks:
                     {
                       "i": 0,           //ID
                       "t": 0,           //transaction time
+                      "s": "btc_usdt",  //symbol
                       "p": "string",    //transaction price
-                      "q": "string",    //transaction quantity
-                      "v": "string",    //transaction volume
-                      "b": true         //whether is buyerMaker or not
+                      "a": "string",    //transaction quantity (base)
+                      "v": "string",    //transaction volume (quote)
+                      "m": "BID"        //taker side: BID or ASK
                     }
                   ]
                 }

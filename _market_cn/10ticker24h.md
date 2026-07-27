@@ -54,15 +54,15 @@ right_code_blocks:
                   "result": [
                     {
                       "s": "btc_usdt",     //交易对(symbol)
-                      "t": 1661856036925,  //时间(time) 
+                      "ts": 1661856036925, //时间(time, ms)
                       "cv": "0.0000",      //价格变动(change value)
-                      "cr": "0.00",        //价格变动百分比(change rate)
+                      "r": "0.00",         //价格变动百分比(change rate)
                       "o": "9000.0000",    //最早一笔(open)
                       "l": "9000.0000",    //最低(low)
                       "h": "9000.0000",    //最高(high)
                       "c": "9000.0000",    //最后一笔(close)
-                      "q": "0.0136",       //成交量(quantity)
-                      "v": "122.9940"      //成交额(volume)
+                      "v": "0.0136",       //成交量(quantity, base)
+                      "uv": "122.9940"     //成交额(volume, quote)
                     }
                   ]
                 }

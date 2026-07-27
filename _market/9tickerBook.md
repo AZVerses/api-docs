@@ -54,7 +54,8 @@ right_code_blocks:
                   "result": [
                     {
                       "s": "btc_usdt",      //symbol
-                      "t": 1661856036925,   //last updated time 
+                      "ts": 1661856036925,  //last updated time (ms)
+                      "u": 137333589606963580,  //matching book updateId
                       "ap": null,           //asks price(sell one price)
                       "aq": null,           //asks qty(sell one quantity)
                       "bp": null,           //bids price(buy one price)

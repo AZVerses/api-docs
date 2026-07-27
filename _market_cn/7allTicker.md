@@ -25,6 +25,13 @@ parameters:
         default:
         description: '标签集合,逗号分割，当前仅支持 spot'
         ranges:
+    -
+        name: type
+        type: string
+        mandatory: false
+        default: normal
+        description: '交易对类型, eg: normal'
+        ranges:
 content_markdown: >-
     #### **限流规则**
 
@@ -58,15 +65,15 @@ right_code_blocks:
                 "result": [
                       {
                         "s": "btc_usdt",        //交易对(symbol)
-                        "t": 1662444879425,     //更新时间(time)
+                        "ts": 1662444879425,    //更新时间(time, ms)
                         "cv": "0.00",           //价格变动(change value)
-                        "cr": "0.0000",         //价格变动百分比(change rate)
+                        "r": "0.0000",          //价格变动百分比(change rate)
                         "o": "200.00",          //最早一笔(open)
                         "l": "200.00",          //最低(low)
                         "h": "200.00",          //最高(high)
                         "c": "200.00",          //最后一笔(close)
-                        "q": "0.002",           //成交量(quantity)
-                        "v": "0.40",            //成交额(volume)
+                        "v": "0.002",           //成交量(quantity, base)
+                        "uv": "0.40",           //成交额(volume, quote)
                         "ap": null,             //asks price(卖一价)
                         "aq": null,             //asks qty(卖一量)
                         "bp": null,             //bids price(买一价)

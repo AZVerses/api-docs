@@ -60,16 +60,21 @@ right_code_blocks:
                   "ma": [
                     {}
                   ],
-                  "result": [
-                    {
-                      "i": 0,           //ID
-                      "t": 0,           //transaction time
-                      "p": "string",    //transaction price
-                      "q": "string",    //transaction quantity
-                      "v": "string",    //transaction volume
-                      "b": true         //whether is buyerMaker or not
-                    }
-                  ]
+                  "result": {
+                    "hasPrev": false,     //has previous page
+                    "hasNext": true,      //has next page
+                    "items": [
+                      {
+                        "i": 0,           //ID
+                        "t": 0,           //transaction time
+                        "s": "btc_usdt",  //symbol
+                        "p": "string",    //transaction price
+                        "a": "string",    //transaction quantity (base)
+                        "v": "string",    //transaction volume (quote)
+                        "m": "BID"        //taker side: BID or ASK
+                      }
+                    ]
+                  }
                 }
         title: Response
         language: json

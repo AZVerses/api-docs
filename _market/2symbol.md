@@ -28,6 +28,20 @@ parameters:
             Version number, when the request version number is consistent with the response content version, the list will not be returned, reducing IO
             eg: 2e14d2cd5czcb2c2af2c1db6
         ranges:
+    -
+        name: tags
+        type: string
+        mandatory: false
+        default:
+        description: 'Set of tags, separated by commas, currently only supports spot'
+        ranges:
+    -
+        name: type
+        type: string
+        mandatory: false
+        default: normal
+        description: 'symbol type, eg: normal/nft'
+        ranges:
 content_markdown: >-
     #### **Limit Flow Rules**
 
@@ -243,7 +257,13 @@ right_code_blocks:
                       {
                         "id": 614,                   //ID
                         "symbol": "btc_usdt",         
+                        "displayName": "BTC/USDT",   //display name
+                        "displayNames": {            //i18n display names (key=lang code, en always present)
+                          "en": "BTC/USDT"
+                        },
+                        "type": "normal",            //symbol type
                         "state": "ONLINE",           //symbol state [ONLINE;OFFLINE,DELISTED]
+                        "stateTime": 1662444177871,  //state time (ms)
                         "tradingEnabled": true,
                         "openapiEnabled": true,      //Openapi transaction is available or not
                         "nextStateTime": null,              
@@ -252,13 +272,22 @@ right_code_blocks:
                         "baseCurrency": "btc",                  
                         "baseCurrencyPrecision": 5,              
                         "baseCurrencyId": 2,                 
+                        "baseCurrencyLogo": "https://.../btc.png",  //base currency logo
                         "quoteCurrency": "usdt",             
                         "quoteCurrencyPrecision": 6,        
                         "quoteCurrencyId": 11,             
                         "pricePrecision": 4,         //Transaction price accuracy
                         "quantityPrecision": 6,
-                        "takerFeeRate": 0.001,       //Taker fee rate
-                        "makerFeeRate": 0.002,       //Maker fee rate
+                        "takerFeeRate": "0.001",     //Taker fee rate (string)
+                        "makerFeeRate": "0.002",     //Maker fee rate (string)
+                        "isBlack": false,            //blacklisted for current builder or not
+                        "isRfq": false,              //RFQ trading pair or not
+                        "chainRelation": [           //base currency chain addresses
+                          {
+                            "chainId": 1,
+                            "contract": "0x..."
+                          }
+                        ],
                         "orderTypes": [              //Order Type [LIMIT;MARKET]
                           "LIMIT",
                           "MARKET"

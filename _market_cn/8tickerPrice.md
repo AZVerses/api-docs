@@ -58,9 +58,9 @@ right_code_blocks:
               "result": [
                 {
                   "s": "btc_usdt",     //交易对(symbol)
-                  "t": 1661856036925   //时间(time)
-                  "p": "9000.0000",    //价格(price)
-                  }
+                  "ts": 1661856036925, //时间(time, ms)
+                  "p": "9000.0000"     //价格(price)
+                }
               ]
             }
         title: Response
