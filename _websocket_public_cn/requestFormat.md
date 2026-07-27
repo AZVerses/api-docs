@@ -16,23 +16,23 @@ left_code_blocks:
     -
         code_block: |-
                 {
-                    "method": "subscribe", 
+                    "method": "subscribe",
                     "params": [
-                        "{topic}@{arg},{arg}", 
-                        "{topic}@{arg}"
-                    ], 
-                    "id": "{id}"    //回调ID
+                        "ticker@btc_usdt",
+                        "depth@btc_usdt"
+                    ],
+                    "id": 1              //回调ID
                 }
         title: 订阅
         language: javascript
     -
         code_block: |-
                 {
-                    "method": "unsubscribe", 
+                    "method": "unsubscribe",
                     "params": [
-                        "{topic}@{arg},{arg}"
-                    ], 
-                    "id": "{id}"   //回调ID
+                        "ticker@btc_usdt"
+                    ],
+                    "id": 2              //回调ID
                 }
         title: 取消订阅
         language: javascript

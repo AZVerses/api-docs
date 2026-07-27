@@ -15,10 +15,10 @@ parameters:
 content_markdown: |-
     **请求**
 
-    语法: trade@\{symbol\}
+    语法: deal@\{symbol\}
 
-    示例: trade@btc\_usdt
-    
+    示例: deal@btc\_usdt
+
     速率: 实时
 left_code_blocks:
     -
@@ -29,18 +29,12 @@ right_code_blocks:
     -
         code_block: |-
             {
-                "topic": "trade", 
-                "event": "trade@btc_usdt", 
-                "data": {
-                    "s": "btc_usdt",           //symbol
-                    "i": 6316559590087222000,  //成交id
-                    "t": 1655992403617,        //时间
-                    "oi": 6616559590087222666, //订单id
-                    "p": "43000",              //价格
-                    "q": "0.21",               //数量
-                    "v": "9030"                //金额
-                    "b": true                  //是否是buyerMaker
-                }
+                "ch": "deal@btc_usdt",   //频道
+                "s": "btc_usdt",         //symbol
+                "p": "43000",            //价格
+                "a": "0.21",             //数量(base)
+                "m": "BID",              //taker方向: BID或ASK
+                "t": 1655992403617       //时间
             }
         title: Response
         language: json

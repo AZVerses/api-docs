@@ -15,35 +15,28 @@ parameters:
         ranges:
 content_markdown: |-
         **如何正确在本地维护一个orderbook副本**
-        
-
-        1.订阅 wss://s-ws.azverse.xyz/public，depth_update@btc_usdt
 
 
-        2.开始缓存收到的更新。同一个价位，后收到的更新覆盖前面的。
+        全深度频道 `depth@<symbol>` 采用订阅即下发快照 + 增量的范式（类 Bybit）。不再 REST 拉快照、不再对齐撮合 updateId。
 
 
-        3.访问Rest接口 https://s-api.azverse.xyz/az/spot/public/depth?symbol=btc_usdt&limit=500 获得一个500档的深度快照
+        1.订阅 `depth@btc_usdt`。
 
 
-        4.将目前缓存到的信息中i <= 步骤3中获取到的快照中的lastUpdateId的部分丢弃(丢弃更早的信息，已经过期)。
+        2.第一帧为快照（`type` = `snapshot`）：整本替换本地簿，并记录 `lastU = u`。
 
 
-        5.将深度快照中的内容更新到本地orderbook副本中，并从websocket接收到的第一个fi <= lastUpdateId+1 且 i >= lastUpdateId+1 的event开始继续更新本地副本。
+        3.之后每个增量（`type` = `delta`）：若 `pu == lastU`，逐档应用并令 `lastU = u`；否则丢弃本地簿并重订阅（或等待服务端主动重发快照）。
 
 
-        6.每一个新event的fi应该恰好等于上一个event的i+1，否则可能出现了丢包，请从step3重新进行初始化。
+        4.每档为该价位挂单量绝对值；量为 `"0"` 表示删除该价位，否则 upsert。
 
 
-        7.每一个event中的挂单量代表这个价格目前的挂单量绝对值，而不是相对变化。
+        5.服务端在重启 / 客户端落后时主动重发快照，故序列断裂在下一个快照自愈。
 
 
-        8.如果某个价格对应的挂单量为0，表示该价位的挂单已经撤单或者被吃，应该移除这个价位。
+        注意：此处 `u` 为 push 本地序列（per-symbol 单调 +1），与定档深度频道（`depth20|depth50|depth100@<symbol>`，其 `u` 为撮合 updateId）不同源，切勿混用。
 
-
-        注意: 因为深度快照对价格档位数量有限制，初始快照之外的价格档位并且没有数量变化的价格档位不会出现在增量深度的更新信息内。因此，即使应用来自增量深度的所有更新，这些价格档位也不会在本地 order book 中可见，
-        所以本地的 order book 与真实的 order book 可能会有一些差异。 不过对于大多数用例，500 的深度限制足以有效地了解市场和交易。
-            
 left_code_blocks:
     -
         code_block:

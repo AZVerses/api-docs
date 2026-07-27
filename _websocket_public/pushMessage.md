@@ -12,14 +12,18 @@ parameters:
         default:
         description:
         ranges:
-content_markdown:
+content_markdown: |-
+    Push frames are flat and carry a `ch` field identifying the channel (`<type>@<symbol>`). Field keys are short keys. Note the full-depth channel adds a `type` (snapshot/delta) field; see the depth channels.
 left_code_blocks:
     -
         code_block: |-
             {
-                "topic": "trade",             
-                "event": "trade@btc_usdt",    //title
-                "data": { }                   
+                "ch": "deal@btc_usdt",   //channel
+                "s": "btc_usdt",         //symbol
+                "p": "43000",            //price
+                "a": "0.21",             //quantity (base)
+                "m": "BID",              //taker side: BID or ASK
+                "t": 1655992403617       //time
             }
         title: format
         language: javascript
@@ -27,18 +31,12 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "trade", 
-                    "event": "trade@btc_usdt", 
-                    "data": {
-                        "s": "btc_usdt",           //symbol
-                        "i": 6316559590087222000,  //tradeId
-                        "t": 1655992403617,        //time
-                        "oi": 6616559590087222666, //orderId
-                        "p": "43000",              //price
-                        "q": "0.21",               //quantity
-                        "v": "9030"                //quoteQty
-                        "b": true                  //whether is buyerMaker or not
-                    }
+                    "ch": "deal@btc_usdt",
+                    "s": "btc_usdt",
+                    "p": "43000",
+                    "a": "0.21",
+                    "m": "BID",
+                    "t": 1655992403617
                 }
         title: Example of transaction record (real-time push message)
         language: json

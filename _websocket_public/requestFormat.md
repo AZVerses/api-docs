@@ -16,23 +16,23 @@ left_code_blocks:
     -
         code_block: |-
                 {
-                    "method": "subscribe", 
+                    "method": "subscribe",
                     "params": [
-                        "{topic}@{arg},{arg}", 
-                        "{topic}@{arg}"
-                    ], 
-                    "id": "{id}"    //call back ID
+                        "ticker@btc_usdt",
+                        "depth@btc_usdt"
+                    ],
+                    "id": 1              //call back ID
                 }
         title: subscribe
         language: javascript
     -
         code_block: |-
                 {
-                    "method": "unsubscribe", 
+                    "method": "unsubscribe",
                     "params": [
-                        "{topic}@{arg},{arg}"
-                    ], 
-                    "id": "{id}"   //call back ID
+                        "ticker@btc_usdt"
+                    ],
+                    "id": 2              //call back ID
                 }
         title: unsubscribe
         language: javascript

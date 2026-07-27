@@ -17,13 +17,15 @@ content_markdown: |-
 
     &nbsp;
 
-    语法: depth@\{symbol\},\{levels\}
+    语法: depth20@\{symbol\} / depth50@\{symbol\} / depth100@\{symbol\}
 
-    levels: 5, 10, 20, 50
+    （档位并入频道名；支持 20 / 50 / 100）
 
-    示例: depth@btc\_usdt,20
-    
-    速率: 1000ms
+    示例: depth20@btc\_usdt
+
+    速率: 实时（服务端对高频 symbol 节流）
+
+    每帧为该档位 top-N 全量（整本替换，无增量）。`u` 为撮合 updateId（版本标记，与全深度频道的本地 `u` 不同源）。
 left_code_blocks:
     -
         code_block:
@@ -33,33 +35,29 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "depth", 
-                    "event": "depth@btc_usdt,20", 
-                    "data": {
-                        "s": "btc_usdt",        // symbol 交易对
-                        "i": 12345678,          // updateId
-                        "t": 1657699200000,     // time 时间戳
-                        "a": [                  // asks 卖盘
-                            [                   //[0]价格, [1]数量
-                                "34000",        //价格
-                                "1.2"           //数量 
-                            ], 
-                            [
-                                "34001", 
-                                "2.3"
-                            ]
-                        ], 
-                        "b": [                   // bids 买盘
-                            [
-                                "32000", 
-                                "0.2"
-                            ], 
-                            [
-                                "31000", 
-                                "0.5"
-                            ]
+                    "ch": "depth20@btc_usdt",  // 频道
+                    "u": 12345678,             // 撮合 updateId(版本标记)
+                    "b": [                     // bids 买盘 [0]价格 [1]数量
+                        [
+                            "32000",
+                            "0.2"
+                        ],
+                        [
+                            "31000",
+                            "0.5"
                         ]
-                    }
+                    ],
+                    "a": [                     // asks 卖盘 [0]价格 [1]数量
+                        [
+                            "34000",
+                            "1.2"
+                        ],
+                        [
+                            "34001",
+                            "2.3"
+                        ]
+                    ],
+                    "ts": 1657699200000        // 时间(ms)
                 }
         title: Response
         language: json

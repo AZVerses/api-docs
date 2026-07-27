@@ -17,13 +17,13 @@ content_markdown: |-
 
     &nbsp;
 
-    format: kline@\{symbol\},\{interval\}
+    format: kline\_\{interval\}@\{symbol\}
 
-    interval: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M
+    interval: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 2d, 3d, 1w, 1M
 
-    eg: kline@btc\_usdt,5m
-    
-    rate: 1000ms
+    eg: kline\_5m@btc\_usdt
+
+    rate: real
 
     &nbsp;
 left_code_blocks:
@@ -35,19 +35,17 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "kline", 
-                    "event": "kline@btc_usdt,5m", 
-                    "data": {
-                        "s": "btc_usdt",        // symbol
-                        "t": 1656043200000,     // time
-                        "i": "5m",              // interval
-                        "o": "44000",           // open price
-                        "c": "50000",           // close price
-                        "h": "52000",           // highest price
-                        "l": "36000",           // lowest price
-                        "q": "34.2",            // qty(quantity)
-                        "v": "230000"           // volume
-                    }
+                    "ch": "kline_5m@btc_usdt", // channel
+                    "s": "btc_usdt",           // symbol
+                    "p": "last",               // price type (spot is always last)
+                    "o": "44000",              // open price
+                    "c": "50000",              // close price
+                    "h": "52000",              // highest price
+                    "l": "36000",              // lowest price
+                    "v": "34.2",               // quantity (base)
+                    "uv": "230000",            // volume (quote)
+                    "i": "5m",                 // interval
+                    "t": 1656043200000         // start time (ms)
                 }
         title: Response
         language: json

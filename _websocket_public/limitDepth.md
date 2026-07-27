@@ -17,13 +17,15 @@ content_markdown: |-
 
     &nbsp;
 
-    format: depth@\{symbol\},\{levels\}
+    format: depth20@\{symbol\} / depth50@\{symbol\} / depth100@\{symbol\}
 
-    levels: 5, 10, 20, 50
+    (the level is part of the channel name; supported levels are 20 / 50 / 100)
 
-    eg: depth@btc\_usdt,20
-    
-    rate: 1000ms
+    eg: depth20@btc\_usdt
+
+    rate: real (the server throttles high-frequency symbols)
+
+    Each frame is a full top-N snapshot (whole-book replace, no increments). `u` is the matching-engine updateId (a version marker, a different source from the full-depth channel's local `u`).
 left_code_blocks:
     -
         code_block:
@@ -33,33 +35,29 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "depth", 
-                    "event": "depth@btc_usdt,20", 
-                    "data": {
-                        "s": "btc_usdt",        // symbol
-                        "i": 12345678,          // updateId
-                        "t": 1657699200000,     // time
-                        "a": [                  // asks(sell order)
-                            [                   //[0]price, [1]quantity
-                                "34000",        //price
-                                "1.2"           //quantity 
-                            ], 
-                            [
-                                "34001", 
-                                "2.3"
-                            ]
-                        ], 
-                        "b": [                   // bids(buy order)
-                            [
-                                "32000", 
-                                "0.2"
-                            ], 
-                            [
-                                "31000", 
-                                "0.5"
-                            ]
+                    "ch": "depth20@btc_usdt",  // channel
+                    "u": 12345678,             // matching updateId (version marker)
+                    "b": [                     // bids (buy order) [0]price [1]quantity
+                        [
+                            "32000",
+                            "0.2"
+                        ],
+                        [
+                            "31000",
+                            "0.5"
                         ]
-                    }
+                    ],
+                    "a": [                     // asks (sell order) [0]price [1]quantity
+                        [
+                            "34000",
+                            "1.2"
+                        ],
+                        [
+                            "34001",
+                            "2.3"
+                        ]
+                    ],
+                    "ts": 1657699200000        // time (ms)
                 }
         title: Response
         language: json
