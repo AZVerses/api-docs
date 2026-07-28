@@ -14,10 +14,10 @@ parameters:
 content_markdown: |-
     #### **基地址**
 
-    **生产环境: wss://f-ws.azverse.xyz/ws/user**
+    **生产环境: wss://f-ws.azverse.xyz/ws/account/futures**
     {: .info}
 
-    **测试环境: wss://f-ws.az-qa.xyz/ws/user**
+    **测试环境: wss://f-ws.az-qa.xyz/ws/account/futures**
     {: .info}
 
 
@@ -28,23 +28,25 @@ content_markdown: |-
 
     请求头必须添加压缩扩展协议。
 
-    <font color="#aa5500">Sec-Websocket-Extensions:permessage-deflate</font>  
+    <font color="#aa5500">Sec-Websocket-Extensions:permessage-deflate</font>
 
 
     ---
 
 
-    #### **订阅步骤**
-    
-    第一步：用户要先调用接口:/az/future/user/v1/user/listen-key   获取listenKey <br/>
-  
-    第二步：订阅用户相关的websocket事件时需要发送：{"method":"SUBSCRIBE","params":["order@{上一步获取的listenKey}"],"id":"test1"} <br/>
+    #### **协议（700 accounts-push 重构）**
 
-    如果收到"invalid_listen_key"表示listenKey过期或者无效，需要重新请求获取listenKey <br/>
+    这是重构后的私有账户 WebSocket 协议。鉴权、订阅、心跳、推送与应答均与旧版不同；**不再需要 `listenKey`**。
 
-    ps：listenKey通过接口获取 <br/>
+    * **鉴权在握手阶段完成（fail-closed）。** 在 WebSocket 升级请求上携带有效且未过期的登录 token，三选一：query（`?token=<token>` 或 `?zToken=<token>`）、cookie（`token` / `zToken`）、或 `Authorization: Bearer <token>` 头。若 token 缺失 / 无效 / 过期，服务端以 **HTTP 401** 拒绝握手并关闭连接（不返回任何 in-band 错误帧）。
 
-    订阅之后会推送用户相关数据
+    * 用纯频道名订阅（无 `@listenKey` 后缀）：`{"method":"SUBSCRIBE","params":["order"],"id":"test1"}`；应答为 `{"id":"test1","code":200,"msg":"success"}`。
+
+    * 推送帧为扁平结构，携带 `ch`（频道名）、`data`（数据）与服务端毫秒时间戳 `ts`：`{"ch":"order","data":{...},"ts":1731231231000}`。
+
+    * 心跳为纯文本 `ping` -> `pong`；空闲 60s（无入站帧）后断开连接。
+
+    * 订阅成功后会推送用户相关数据。
 left_code_blocks:
 -
     code_block:

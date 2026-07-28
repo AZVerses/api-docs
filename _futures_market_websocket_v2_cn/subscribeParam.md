@@ -15,7 +15,11 @@ parameters:
 content_markdown: |-
     **结构**
 
-    \{topic\}@\{arg\},\{arg\},...
+    `<type>@<symbol>` ，其中 `<symbol>` 用小写下划线（如 `btc_usdt`）。
+
+    示例：`ticker@btc_usdt` 、`depth@btc_usdt` 、`depth20@btc_usdt` 、`tickerbook@btc_usdt` 、`deal@btc_usdt` 、`kline_1m@btc_usdt` 、`fundrate@btc_usdt` 、`index_price@btc_usdt` 、`mark_price@btc_usdt` 。
+
+    全市场频道 `tickers` 无 `@symbol` 后缀。
 left_code_blocks:
     -
         code_block:

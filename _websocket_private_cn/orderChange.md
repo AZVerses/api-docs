@@ -27,8 +27,7 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "order", 
-                    "event": "order", 
+                    "ch": "order",
                     "data": {
                         "s": "btc_usdt",                // symbol 交易对
                         "bc": "btc",                    // baseCurrency 标的币种
@@ -40,16 +39,16 @@ right_code_blocks:
                         "st": "PARTIALLY_FILLED",       // state 状态 NEW/PARTIALLY_FILLED/FILLED/CANCELED/REJECTED/EXPIRED
                         "sd": "BUY",                    // side 方向 BUY/SELL
                         "tp": "LIMIT",                  // type 类型 LIMIT/MARKET
-                        "oq":  "4"                      // origQty 原始数量
-                        "oqq":  48000,                  // origQuoteQty 原始金额
+                        "bt": "SPOT",                   // bizType 业务类型
+                        "oq": "4",                      // origQty 原始数量
+                        "oqq": "48000",                 // origQuoteQty 原始金额
                         "eq": "2",                      // executedQty 已执⾏数量
                         "lq": "2",                      // leavingQty 待执行数量
                         "p": "4000",                    // price 价格
-                        "ap": "30000",                  // avg price 均价
-                        "f": "0.001",                   // fee 手续费
-                        "rfq": false,                   // 是否为 RFQ 订单
-                        "outcome": 1                    // 预测市场结局资产[1=YES,2=NO]
-                    }
+                        "ap": "30000",                  // avgPrice 均价
+                        "f": "0.002"                    // fee 手续费
+                    },
+                    "ts": 1656043204763
                 }
         title: 推送
         language: json

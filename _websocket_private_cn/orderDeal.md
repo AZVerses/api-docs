@@ -27,8 +27,7 @@ right_code_blocks:
     -
         code_block: |-
             {
-                "topic": "trade", 
-                "event": "trade", 
+                "ch": "trade",
                 "data": {
                     "s": "btc_usdt",           //symbol
                     "i": 6316559590087222000,  //成交id
@@ -38,8 +37,11 @@ right_code_blocks:
                     "q": "0.21",               //数量
                     "v": "9030",               //金额
                     "b": true,                 //是否是buyerMaker
-                    "tm": 1                    //1-taker 2-maker
-                }
+                    "tm": 1,                   //1-taker 2-maker
+                    "rfq": false,              //是否为 RFQ 成交
+                    "ouid": 6216559590087220004 //对手方 userId（仅预测市场 maker 可见）
+                },
+                "ts": 1655992403617
             }
         title: 推送
         language: json

@@ -15,15 +15,17 @@ parameters:
 content_markdown: |-
     **param结构**
 
-    \{topic\}@\{arg\},\{arg\},…
+    `params` 中每一项为纯频道名（不带 `@accountId` 后缀——账户由握手 token 解析得到）。
+
+    频道：`balance`、`order`、`trade`、`entrust`、`pred_position`。
 left_code_blocks:
     -
         code_block: |-
                 {
                     "method": "subscribe", 
                     "params": [
-                        "{topic}@{arg},{arg}",    //event
-                        "{topic}@{arg}"
+                        "balance",
+                        "order"
                     ], 
                     "id": "{id}"
                 }
@@ -34,8 +36,8 @@ left_code_blocks:
             {
                 "method": "unsubscribe", 
                 "params": [
-                    "{topic}@{arg},{arg}",    //event
-                    "{topic}@{arg}"
+                    "balance",
+                    "order"
                 ], 
                 "id": "{id}"
             }

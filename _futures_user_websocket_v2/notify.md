@@ -18,7 +18,7 @@ content_markdown: |-
     {
        "method": "SUBSCRIBE/UNSUBSCRIBE",
        "params": [
-           "{notify}@{listenKey}",
+           "notify"
         ],
        "id": "{id}"
     }
@@ -33,15 +33,15 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "notify", 
-                    "event": "notify", 
+                    "ch": "notify",
                     "data": {
                            "symbol":"btc_usdt",
-                           "positionType": "ISOLATED",  
+                           "positionType": "ISOLATED",
                            "positionSide": "LONG",
-                           "positionSize":"123",  // Position quantity
-                           "notifyType": "WARN",  // Notification Type:WARN:Warning, about to be levelled,PARTIAL:Partially Liquidation,LIQUIDATION:Liquidation,ADL:ADL
-                    }
+                           "positionSize":"0.5",  // Position quantity (base coin)
+                           "notifyType": "WARN"   // Notification type:WARN:about to be liquidated;PARTIAL:partial liquidation;LIQUIDATION:liquidation;ADL:ADL
+                    },
+                    "ts": 1731231231000
                 }
         title: Response
         language: json

@@ -1,6 +1,6 @@
 ---
 title: Index price
-position_number: 14
+position_number: 15
 type:
 description: 
 
@@ -18,8 +18,10 @@ content_markdown: |-
     format: index_price@\{symbol\}
 
     eg: index_price@btc\_usdt
-    
-    rate: 1000ms
+
+    rate: once per second (1000ms)
+
+    This channel keeps the legacy `{topic,event,data}` envelope (it is not a flat `ch` frame).
 left_code_blocks:
     -
         code_block:

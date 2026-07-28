@@ -27,17 +27,17 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "balance", 
-                    "event": "balance", 
+                    "ch": "balance",
                     "data": {
-                        "a": "123",           // accountId 账号 
+                        "a": "123",           // accountId 账号
                         "t": 1656043204763,   // time 发⽣时间
                         "c": "btc",           // currency 币种
                         "b": "123",           // balance 全部现货资产
                         "f": "11",            // frozen 冻结资产
                         "z": "SPOT",          // bizType 业务类型[SPOT]
-                        "s": "btc_usdt"       // symbol 交易市场  
-                    }
+                        "s": "btc_usdt"       // symbol 交易市场
+                    },
+                    "ts": 1656043204763
                 }
         title: 推送
         language: json

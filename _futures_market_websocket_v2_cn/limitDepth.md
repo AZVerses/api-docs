@@ -1,6 +1,6 @@
 ---
 title: 有限深度
-position_number: 17
+position_number: 10
 type:
 description: 
 
@@ -17,14 +17,15 @@ content_markdown: |-
 
     &nbsp;
 
-    语法: depth@\{symbol\},\{levels\},\{interval\}
+    语法: depth20@\{symbol\} / depth50@\{symbol\} / depth100@\{symbol\}
 
-    levels: 5/10/20/50
-  
-    interval: 100/250/500/1000 默认速率1000ms
+    （档位并入频道名；支持 20 / 50 / 100）
 
-    示例: depth@btc\_usdt,50,1000ms
-  
+    示例: depth20@btc\_usdt
+
+    速率: 实时（服务端对高频 symbol 节流）
+
+    每帧为该档位 top-N 全量（整本替换，无增量）。`u` 为撮合 updateId（版本标记，与全深度频道的本地 `u` 不同源）。
 left_code_blocks:
     -
         code_block:
@@ -34,15 +35,29 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "depth", 
-                    "event": "depth@btc_usdt,50", 
-                    "data": {
-                        "id": "1234",                           //lastUpdateId
-                        "s":"btc_index",                        //交易对
-                        "a":[["50000","0.1"],["50001","0.2"]],  //ask 卖单队列， [价格，数量]
-                        "b":[["49999","0.1"],["48888","0.2"]],  //bid 买单队列
-                        "t": 123456789                          // 时间戳
-                    }
+                    "ch": "depth20@btc_usdt",  // 频道
+                    "u": 12345678,             // 撮合 updateId(版本标记)
+                    "b": [                     // bids 买盘 [0]价格 [1]数量
+                        [
+                            "32000",
+                            "0.2"
+                        ],
+                        [
+                            "31000",
+                            "0.5"
+                        ]
+                    ],
+                    "a": [                     // asks 卖盘 [0]价格 [1]数量
+                        [
+                            "34000",
+                            "1.2"
+                        ],
+                        [
+                            "34001",
+                            "2.3"
+                        ]
+                    ],
+                    "ts": 1657699200000        // 时间(ms)
                 }
         title: Response
         language: json

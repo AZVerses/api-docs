@@ -18,7 +18,7 @@ content_markdown: |-
     {
        "method": "SUBSCRIBE/UNSUBSCRIBE",
        "params": [
-           "{notify}@{listenKey}",
+           "notify"
         ],
        "id": "{id}"
     }
@@ -33,15 +33,15 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "notify", 
-                    "event": "notify", 
+                    "ch": "notify",
                     "data": {
                            "symbol":"btc_usdt",
-                           "positionType": "ISOLATED",  
+                           "positionType": "ISOLATED",
                            "positionSide": "LONG",
-                           "positionSize":"123",  // 持仓数量
-                           "notifyType": "WARN",  // 通知类型:  WARN：告警，即将被强平，PARTIAL：部分强平，LIQUIDATION：全部强平，ADL：自动减仓
-                    }
+                           "positionSize":"0.5",  // 持仓数量（标的币）
+                           "notifyType": "WARN"   // 通知类型:WARN:告警，即将被强平;PARTIAL:部分强平;LIQUIDATION:全部强平;ADL:自动减仓
+                    },
+                    "ts": 1731231231000
                 }
         title: Response
         language: json

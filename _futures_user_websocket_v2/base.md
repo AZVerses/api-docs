@@ -14,10 +14,10 @@ parameters:
 content_markdown: |-
     #### **Base Address**
 
-    **production environment: wss://f-ws.azverse.xyz/ws/user**
+    **production environment: wss://f-ws.azverse.xyz/ws/account/futures**
     {: .info}
 
-    **sandbox environment: wss://f-ws.az-qa.xyz/ws/user**
+    **sandbox environment: wss://f-ws.az-qa.xyz/ws/account/futures**
     {: .info}
 
 
@@ -28,23 +28,25 @@ content_markdown: |-
 
     The request header of the compression extension protocol must be added.
 
-    <font color="#aa5500">Sec-Websocket-Extensions:permessage-deflate</font> 
+    <font color="#aa5500">Sec-Websocket-Extensions:permessage-deflate</font>
 
 
     ---
 
 
-    #### **Subscription Steps**
+    #### **Protocol (700 accounts-push rebuild)**
 
-    Step 1: The user need to call the interface: /az/future/user/v1/user/listen-key to get the listenKey. <br/>
-    
-    Step 2: When subscribing to user-related websocket events, users need to send: {"method":"SUBSCRIBE","params":["order@{listenKey obtained in the previous step}"],"id":"test1"} <br/>
+    This is the rebuilt private account WebSocket protocol. Authentication, subscription, heartbeat, push and ack are all different from the old version; there is **no more `listenKey`**.
 
-    If you receive "invalid_listen_key", it means that the listenKey is expired or invalid, and you need to re-request to obtain the listenKey. <br/>
+    * **Authentication is at handshake time (fail-closed).** Carry a valid, unexpired login token on the WebSocket upgrade request in any one of: query string (`?token=<token>` or `?zToken=<token>`), cookie (`token` / `zToken`), or `Authorization: Bearer <token>` header. If the token is missing / invalid / expired, the server rejects the handshake with **HTTP 401** and closes the connection (there is no in-band error frame).
 
-    ps: listenKey is obtained through the interface. <br/>
+    * Subscribe with plain channel names (no `@listenKey` suffix): `{"method":"SUBSCRIBE","params":["order"],"id":"test1"}`; the ack is `{"id":"test1","code":200,"msg":"success"}`.
 
-    User-related data will be pushed after subscription.
+    * Push frames are flat and carry a `ch` field (the channel name), the payload `data`, and a server millisecond timestamp `ts`: `{"ch":"order","data":{...},"ts":1731231231000}`.
+
+    * Heartbeat is the plain text `ping` -> `pong`; the connection is disconnected after 60s reader idle.
+
+    * User-related data is pushed after a successful subscription.
 left_code_blocks:
 -
     code_block:

@@ -27,8 +27,7 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "trade", 
-                    "event": "trade", 
+                    "ch": "trade",
                     "data": {
                         "s": "btc_usdt",           //symbol
                         "i": 6316559590087222000,  //tradeId
@@ -38,8 +37,11 @@ right_code_blocks:
                         "q": "0.21",               //quantity
                         "v": "9030",               //quoteQty
                         "b": true,                 //whether is buyerMaker or not
-                        "tm": 1                    //1-taker 2-maker
-                    }
+                        "tm": 1,                   //1-taker 2-maker
+                        "rfq": false,              //whether is RFQ trade or not
+                        "ouid": 6216559590087220004 //opposite user id (prediction market maker only)
+                    },
+                    "ts": 1655992403617
                 }
         title: push
         language: json

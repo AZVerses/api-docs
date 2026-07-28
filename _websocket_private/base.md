@@ -15,17 +15,36 @@ parameters:
 content_markdown: |-
     #### **Base Address**
 
-    **生产环境: wss://s-ws.azverse.xyz/private**
+    **production environment: wss://s-ws.azverse.xyz/ws/account/spot**
     {: .info}
 
-    **测试环境: wss://s-ws.az-qa.xyz/private**
+    **sandbox environment: wss://s-ws.az-qa.xyz/ws/account/spot**
     {: .info}
 
 
     ---
-    #### **Request Parameter**
-    <font color="#aa5500">?token={accessToken}</font> 
-    accessToken come from /az/spot/ws-token
+
+
+    #### **Protocol (700 accounts-push rebuild)**
+
+
+    This is the rebuilt private account WebSocket protocol. Authentication, subscription, push and ack are all different from the old version and the field keys are short keys.
+
+
+    * The token is carried **on the handshake** (there is no LOGIN message any more). Fetch it from `/az/spot/ws-token` and pass it as `?token=<accessToken>` (or `?zToken=`) in the query string, or as a `token` / `zToken` cookie, or as an `Authorization: Bearer <accessToken>` header.
+
+    * Authentication is **fail-closed**: a missing / invalid / expired token, or a wrong path, is rejected with HTTP `401` and the connection is closed.
+
+    * The account is taken from the token — subscription channel names carry **no** `@accountId` suffix.
+
+    * Subscribe with `{"method":"subscribe","params":["balance","order"],"id":<n>}`; ack is `{"id":<n>,"code":200,"msg":"success"}` on success or `{"id":<n>,"code":400,"msg":"<reason>"}` on failure.
+
+    * Push frames are flat and carry `ch`: `{"ch":"balance","data":{...},"ts":<ts>}`.
+
+    * Channels: `balance`, `order`, `trade`, `entrust`, `pred_position` (spot-only). Subscribing to a channel outside the spot domain returns `400`.
+
+    * Heartbeat is text `ping` -> `pong`. The connection is disconnected after 60s of read idle.
+
 
     #### **Request Headers**
 

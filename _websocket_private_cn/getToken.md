@@ -20,6 +20,8 @@ content_markdown: |-
   #### **备注**
   
   accessToken有效期是1天，重新调用接口获取token会重置有效期。
+
+  accessToken 不再通过 LOGIN 报文发送，改为在 **WebSocket 握手时携带**（见基本信息：查询串 `?token` / `?zToken`、cookie 或 `Authorization: Bearer`）。
   
 left_code_blocks:
     -

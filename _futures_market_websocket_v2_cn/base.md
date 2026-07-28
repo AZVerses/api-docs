@@ -13,23 +13,37 @@ parameters:
         description:
         ranges:
 content_markdown: |-
+  
     #### **基地址**
 
-    **生产环境: wss://f-ws.azverse.xyz/ws/market**
+
+    **生产环境: wss://f-ws.azverse.xyz/futures/public**
     {: .info}
 
-    **测试环境: wss://f-ws.az-qa.xyz/ws/market**
+    **测试环境: wss://f-ws.az-qa.xyz/futures/public**
     {: .info}
 
 
     ---
 
 
-    #### **Request Headers**
+    #### **协议（700 行情中心重构）**
 
-    请求头必须添加压缩扩展协议。
 
-    <font color="#aa5500">Sec-Websocket-Extensions:permessage-deflate</font>  
+    这是行情中心重构后的公共行情 WebSocket 协议。连接 / 订阅 / 心跳 / 推送 / 应答均与旧版不同，字段一律短键。
+
+
+    * 订阅：`{"method":"subscribe","params":["ticker@btc_usdt"],"id":<n>}`；应答 `{"id":<n>,"result":"ok"}` 或 `{"id":<n>,"error":"<reason>"}`。
+
+    * 多数频道为扁平帧，带 `ch`（如 `"ch":"ticker@btc_usdt"`）。
+
+    * 心跳为 JSON `{"method":"ping"}` -> `{"pong":<ts>}`；空闲超时断连。
+
+    * 频道内 symbol 用小写下划线，如 `btc_usdt`。
+
+    * 全深度采用订阅即下发快照 + 增量（服务端在重启 / 客户端落后时主动重发快照）；无需 REST 拉快照。
+
+    * 合约专属：`ticker` 帧带 `ix`/`mx`（指数 / 标记价），并提供独立 `fundrate@<symbol>` 频道；`index_price@<symbol>` / `mark_price@<symbol>` 频道保留旧的 `{topic,event,data}` 信封（非扁平帧）。
 left_code_blocks:
     -
         code_block:

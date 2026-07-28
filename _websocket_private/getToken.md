@@ -21,6 +21,8 @@ content_markdown: |-
   #### **Note**
   
   The accessToken is valid for 1 days. Calling the endpoint again will reset the validity period. 
+
+  The accessToken is no longer sent as a LOGIN message; carry it **on the WebSocket handshake** (see General WSS information: query `?token` / `?zToken`, cookie, or `Authorization: Bearer`).
   
 left_code_blocks:
     -

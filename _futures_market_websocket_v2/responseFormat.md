@@ -12,24 +12,24 @@ parameters:
         default:
         description:
         ranges:
-content_markdown:
+content_markdown: |-
+    The subscribe / unsubscribe ack is `{"id":<n>,"result":"ok"}` on success, or `{"id":<n>,"error":"<reason>"}` on failure (e.g. the server rejects the subscription while warm-up is not ready).
 left_code_blocks:
     -
         code_block: |-
             {
-                "id": "{id}",   //call back ID
-                "code": 1,      //result 0=success;1=fail;2=listenKey invalid
-                "msg": ""
+                "id": 1,          //call back ID
+                "result": "ok"
             }
         title: format
         language: javascript
 right_code_blocks:
     -
-        code_block: '{"id":"123", "code": 0, "msg": "success"}   '
+        code_block: '{"id": 1, "result": "ok"}'
         title: Response-success
         language: json
     -
-        code_block: '{"id":"123", "code": 401, "msg": "token expire"}'
-        title: response-token invalid
+        code_block: '{"id": 1, "error": "invalid channel"}'
+        title: Response-error
         language: json
 ---

@@ -15,7 +15,11 @@ parameters:
 content_markdown: |-
     **format**
 
-    \{topic\}@\{listenKey\},...
+    A plain channel name, one of:
+
+    `order` , `trade` , `balance` , `position` , `notify` , `entrust` , `profit` , `track_entrust` , `user_profile` , `plan_reverse_entrust` .
+
+    There is no `@listenKey` (or any other) suffix — the account is bound from the login token at handshake time.
 left_code_blocks:
     -
         code_block:

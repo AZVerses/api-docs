@@ -15,15 +15,17 @@ parameters:
 content_markdown: |-
     **param format**
 
-    \{topic\}@\{arg\},\{arg\},…
+    Each entry in `params` is a plain channel name (no `@accountId` suffix — the account is taken from the handshake token).
+
+    Channels: `balance` , `order` , `trade` , `entrust` , `pred_position` .
 left_code_blocks:
     -
         code_block: |-
                 {
                     "method": "subscribe", 
                     "params": [
-                        "{topic}@{arg},{arg}",    //event
-                        "{topic}@{arg}"
+                        "balance",
+                        "order"
                     ], 
                     "id": "{id}"
                 }
@@ -34,8 +36,8 @@ left_code_blocks:
             {
                 "method": "unsubscribe", 
                 "params": [
-                    "{topic}@{arg},{arg}",    //event
-                    "{topic}@{arg}"
+                    "balance",
+                    "order"
                 ], 
                 "id": "{id}"
             }

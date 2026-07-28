@@ -17,15 +17,22 @@ content_markdown: |-
           {
            "method": "SUBSCRIBE/UNSUBSCRIBE",
            "params": [
-                  "{order}@{listenKey}",
-                  "{trade}@{listenKey}",
-                  "{balance}@{listenKey}",
-                  "{position}@{listenKey}",
-                  "{notify}@{listenKey}"
+                  "order",
+                  "trade",
+                  "balance",
+                  "position",
+                  "notify",
+                  "entrust",
+                  "profit",
+                  "track_entrust",
+                  "user_profile",
+                  "plan_reverse_entrust"
                 ],
            "id": "{id}"    //用户自己定义
            }
         ```
+
+        频道名为纯名称（无 `@listenKey` 后缀）。token 在握手阶段携带（见基本信息），不作为订阅参数。
 left_code_blocks:
     -
         code_block: 
@@ -36,7 +43,7 @@ left_code_blocks:
                 {
                     "method": "unsubscribe", 
                     "params": [
-                        "{topic}@{arg}"
+                        "order"
                     ], 
                     "id": "{id}"   //回调ID
                 }
@@ -46,7 +53,7 @@ right_code_blocks:
     -
         code_block: |-
                {"method":"SUBSCRIBE",
-                "params":["order@A246C3DF8EE532DC75007BC5D86698541678596355681"],
+                "params":["order","position"],
                 "id":"test1"
                }
         title: Response

@@ -1,6 +1,6 @@
 ---
 title: 资金费率
-position_number: 18
+position_number: 17
 type:
 description: 
 
@@ -15,10 +15,10 @@ parameters:
 content_markdown: |-
     **请求**
 
-    语法: fund_rate@\{symbol\}
+    语法: fundrate@\{symbol\}
 
-    示例: fund_rate@btc\_usdt
-    
+    示例: fundrate@btc\_usdt
+
     速率: 60s
 left_code_blocks:
     -
@@ -29,13 +29,11 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "fund_rate", 
-                    "event": "fund_rate@btc_usdt", 
-                    "data": {
-                        "s":"btc_usdt", //交易对
-                        "r":"0.01",    // 资金费率
-                        "t":123124124   //时间戳
-                    }
+                    "ch": "fundrate@btc_usdt", // 频道
+                    "s": "btc_usdt",           // symbol 交易对
+                    "r": "0.0001",             // 资金费率
+                    "t": 1655992403617,        // 时间(ms)
+                    "nt": 1655996003617        // 下次资金费时间(ms)
                 }
         title: Response
         language: json

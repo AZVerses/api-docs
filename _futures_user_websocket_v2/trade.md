@@ -18,7 +18,7 @@ content_markdown: |-
     {
        "method": "SUBSCRIBE/UNSUBSCRIBE",
        "params": [
-           "{trade}@{listenKey}",
+           "trade"
         ],
        "id": "{id}"
     }
@@ -33,25 +33,26 @@ right_code_blocks:
     -
         code_block: |-
             {
-                "topic": "trade", 
-                "event": "trade@123456", 
+                "ch": "trade",
                 "data": {
                         "id": "556931318219666113",
+                        "symbol": "btc_usdt",       // Symbol
+                        "orderSide": "BUY",         // Order side
+                        "positionSide": "LONG",     // Position side
                         "orderId":"12312312",       // Order ID
-                        "clientOrderId":"123456",   // Client order ID
                         "price":"34244",            // Price
-                        "quantity":"123",           // Quantity
-                        "marginUnfrozen":"123",     // Quantity of unfrozen margin
-                        "timestamp":1731231231,     // Timestamp
-                        "symbol": "btc_usdt",       //Symbol
-                        "orderSide": "BUY",         //Order side
-                        "positionSide": "LONG",     //Position side
-                        "isMaker": true,            //Is maker or not, true:maker;false:taker
-                        "fee": 0.0002,              //fee
-                        "execId": "123",            //Execution id
-                        "oppositeUserId": "1234",     //Opposite User Id, Provided for Market Makers Only
-                        "oppositeOrderId": "2345"     //Opposite Order Id, Provided for Market Makers Only
-                   }
+                        "quantity":"0.5",           // Quantity (base coin)
+                        "isMaker": true,            // Is maker or not, true:maker;false:taker
+                        "marginUnfrozen":"123",     // Quantity of unfrozen margin
+                        "fee": "0.0002",            // Fee (string)
+                        "timestamp":1731231231000,  // Timestamp (ms)
+                        "clientOrderId":"123456",   // Client order ID
+                        "oppositeUserId": "1234",   // Opposite user id, provided for market makers / vault accounts only
+                        "oppositeOrderId": "2345",  // Opposite order id, provided for market makers / vault accounts only
+                        "execId": "123",            // Execution id, provided for market makers / vault accounts only
+                        "searchId": "789"           // Search id, provided for market makers / vault accounts only
+                   },
+                "ts": 1731231231000
             }
         title: Response
         language: json

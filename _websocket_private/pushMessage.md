@@ -12,14 +12,15 @@ parameters:
         default:
         description:
         ranges:
-content_markdown:
+content_markdown: |-
+    Push frames are flat and carry a `ch` field identifying the channel, the `data` payload, and a `ts` server timestamp (epoch millisecond). Field keys inside `data` are short keys.
 left_code_blocks:
     -
         code_block: |-
             {
-                "topic": "trade",          
-                "event": "trade@btc_usdt", 
-                "data": { }                
+                "ch": "balance",   //channel
+                "data": { },       //payload (short keys)
+                "ts": 1656043204763
             }
         title: format
         language: javascript

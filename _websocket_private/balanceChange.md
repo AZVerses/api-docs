@@ -27,17 +27,17 @@ right_code_blocks:
     -
         code_block: |-
             {
-                "topic": "balance", 
-                "event": "balance", 
+                "ch": "balance",
                 "data": {
-                    "a": "123",           // accountId                     
+                    "a": "123",           // accountId
                     "t": 1656043204763,   // time happened time
                     "c": "btc",           // currency
                     "b": "123",           // all spot balance
                     "f": "11",            // frozen
-                    "z": "SPOT",           // bizType [SPOT]
+                    "z": "SPOT",          // bizType [SPOT]
                     "s": "btc_usdt"       // symbol
-                }
+                },
+                "ts": 1656043204763
             }
         title: push
         language: json

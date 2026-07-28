@@ -13,23 +13,37 @@ parameters:
         description:
         ranges:
 content_markdown: |-
+  
     #### **Base Address**
 
-    **production environment: wss://f-ws.azverse.xyz/ws/market**
+
+    **production environment: wss://f-ws.azverse.xyz/futures/public**
     {: .info}
 
-    **sandbox environment: wss://f-ws.az-qa.xyz/ws/market**
+    **sandbox environment: wss://f-ws.az-qa.xyz/futures/public**
     {: .info}
 
 
     ---
 
 
-    #### **Request Headers**
+    #### **Protocol (700 market-center rebuild)**
 
-    The request header of the compression extension protocol must be added.
 
-    <font color="#aa5500">Sec-Websocket-Extensions:permessage-deflate</font> 
+    This is the rebuilt public market WebSocket protocol. Connection / subscription / heartbeat / push / ack are all different from the old version and the field keys are short keys.
+
+
+    * Subscribe with `{"method":"subscribe","params":["ticker@btc_usdt"],"id":<n>}`; ack is `{"id":<n>,"result":"ok"}` or `{"id":<n>,"error":"<reason>"}`.
+
+    * Most channels are flat frames carrying `ch` (e.g. `"ch":"ticker@btc_usdt"`).
+
+    * Heartbeat is JSON `{"method":"ping"}` -> `{"pong":<ts>}`; idle timeout disconnects.
+
+    * Symbol in channels uses lowercase underscore, e.g. `btc_usdt`.
+
+    * Full depth uses subscribe-time snapshot + delta (the server re-pushes a snapshot on restart / when the client falls behind); no REST snapshot pull is needed.
+
+    * Futures extras: the `ticker` frame carries `ix`/`mx` (index / mark price) and a dedicated `fundrate@<symbol>` channel is available; the `index_price@<symbol>` / `mark_price@<symbol>` channels keep the legacy `{topic,event,data}` envelope (they are not flat frames).
 left_code_blocks:
     -
         code_block:

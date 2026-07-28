@@ -15,40 +15,28 @@ parameters:
         ranges:
 content_markdown: |-
         **How to manage a local order book correctly**
-        
-
-        1.Open a stream to wss://f-ws.azverse.xyz/ws/market , depth_update@btc_usdt
 
 
-        2.Buffer the events you receive from the stream.
+        The full-depth channel `depth@<symbol>` follows a subscribe-time snapshot + delta model (Bybit style). You no longer pull a REST snapshot or align on the matching-engine updateId.
 
 
-        3.Get a depth snapshot from https://f-api.azverse.xyz/az/future/market/v1/public/depth?symbol=btc_usdt&level=500
+        1.Subscribe to `depth@btc_usdt`.
 
 
-        4.Drop any event where u is <= lastUpdateId in the snapshot.
+        2.The first frame is a snapshot (`type` = `snapshot`): replace your whole local book and record `lastU = u`.
 
 
-        5.The first processed event should have fu <= lastUpdateId+1 AND u >= lastUpdateId+1.
+        3.For each following delta (`type` = `delta`): if `pu == lastU`, apply the levels one by one and set `lastU = u`; otherwise discard the local book and re-subscribe (or wait for the server to actively re-push a snapshot).
 
 
-        6.While listening to the stream, each new event's fu should be equal to the previous event's u+1.
+        4.Each level is the absolute quantity for a price level; a level whose quantity is `"0"` is removed, otherwise upsert.
 
 
-        7.The data in each event is the absolute quantity for a price level.
+        5.The server re-pushes a snapshot on restart / when the client falls behind, so a broken sequence self-heals on the next snapshot.
 
 
-        8.If the quantity is 0, remove the price level.
+        Note: `u` here is the push local sequence (per-symbol monotonic +1), which is a different source from the fixed-level depth channels (`depth20|depth50|depth100@<symbol>`) where `u` is the matching updateId. Do not mix the two.
 
-
-        9.Receiving an event that removes a price level that is not in your local order book can happen and is normal.
-
-
-        Note: Due to depth snapshots having a limit on the number of price levels, a price level outside of the initial snapshot that doesn't have a quantity change won't have an update in the Diff. 
-        Depth Stream. Consequently, those price levels will not be visible in the local order book even when applying all updates from the Diff. 
-        Depth Stream correctly and cause the local order book to have some slight differences with the real order book. However, 
-        for most use cases the depth limit of 500 is enough to understand the market and trade effectively.
-            
 left_code_blocks:
     -
         code_block:

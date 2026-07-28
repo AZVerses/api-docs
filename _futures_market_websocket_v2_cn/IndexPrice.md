@@ -1,6 +1,6 @@
 ---
 title: 指数价格
-position_number: 14
+position_number: 15
 type:
 description: 
 
@@ -18,8 +18,10 @@ content_markdown: |-
     语法: index_price@\{symbol\}
 
     示例: index_price@btc\_usdt
-    
-    速率: 1000ms
+
+    速率: 每秒一次（1000ms）
+
+    此频道保留旧的 `{topic,event,data}` 信封（非扁平 `ch` 帧）。
 left_code_blocks:
     -
         code_block:

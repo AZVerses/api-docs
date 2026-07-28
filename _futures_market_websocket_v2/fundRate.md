@@ -1,6 +1,6 @@
 ---
 title: Fund rate
-position_number: 18
+position_number: 17
 type:
 description: 
 
@@ -15,10 +15,10 @@ parameters:
 content_markdown: |-
     **request**
 
-    format: fund_rate@\{symbol\}
+    format: fundrate@\{symbol\}
 
-    eg: fund_rate@btc\_usdt
-    
+    eg: fundrate@btc\_usdt
+
     rate: 60s
 left_code_blocks:
     -
@@ -29,13 +29,11 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "fund_rate", 
-                    "event": "fund_rate@btc_usdt", 
-                    "data": {
-                        "s":"btc_usdt", //Trading pair
-                        "r":"0.01",    // Fund fee
-                        "t":123124124   //timestamp
-                   }
+                    "ch": "fundrate@btc_usdt", // channel
+                    "s": "btc_usdt",           // symbol
+                    "r": "0.0001",             // funding rate
+                    "t": 1655992403617,        // time (ms)
+                    "nt": 1655996003617        // next funding time (ms)
                 }
         title: Response
         language: json

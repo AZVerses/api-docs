@@ -17,29 +17,36 @@ content_markdown: |-
           {
              "method": "SUBSCRIBE/UNSUBSCRIBE",
              "params": [
-                 "{order}@{listenKey}",
-                 "{trade}@{listenKey}",
-                 "{balance}@{listenKey}",
-                 "{position}@{listenKey}",
-                 "{notify}@{listenKey}"
+                 "order",
+                 "trade",
+                 "balance",
+                 "position",
+                 "notify",
+                 "entrust",
+                 "profit",
+                 "track_entrust",
+                 "user_profile",
+                 "plan_reverse_entrust"
               ],
              "id": "{id}"    //user defined
           }
         ```
+
+        Channel names are plain (no `@listenKey` suffix). The token is carried at handshake time (see General WSS information); it is not part of the subscribe params.
 left_code_blocks:
     -
         code_block:
         title: subscribe
         language: javascript
     -
-        code_block: 
+        code_block:
         title: unsubscribe
         language: javascript
 right_code_blocks:
     -
         code_block: |-
                {"method":"SUBSCRIBE",
-                "params":["order@A246C3DF8EE532DC75007BC5D86698541678596355681"],
+                "params":["order","position"],
                 "id":"test1"
                 }
         title: subscribe

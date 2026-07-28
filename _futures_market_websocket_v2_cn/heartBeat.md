@@ -12,15 +12,15 @@ parameters:
         default:
         description:
         ranges:
-content_markdown: 客户端每个链接需要定期发送"ping"字符串，服务端会回复"pong"，服务端在30秒内没有收到客户端的ping消息，会主动断开链接
+content_markdown: 客户端定期发送 JSON `{"method":"ping"}`（建议每 <= 30s 一次），服务端回复 `{"pong":<ts>}`，其中 `ts` 为服务端毫秒时间戳。空闲超时服务端主动断开链接。
 left_code_blocks:
     -
-        code_block:
-        title: Python
-        language: python
+        code_block: '{"method":"ping"}'
+        title: ping
+        language: javascript
 right_code_blocks:
     -
-        code_block:
-        title: Response
+        code_block: '{"pong": 1661856036925}'
+        title: pong
         language: json
 ---

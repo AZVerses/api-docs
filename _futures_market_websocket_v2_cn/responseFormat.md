@@ -12,24 +12,24 @@ parameters:
         default:
         description:
         ranges:
-content_markdown:
+content_markdown: |-
+    订阅 / 取消订阅应答：成功 `{"id":<n>,"result":"ok"}`，失败 `{"id":<n>,"error":"<reason>"}`（如服务端 warm-up 未就绪拒绝订阅）。
 left_code_blocks:
     -
         code_block: |-
             {
-                "id": "{id}",   //请求回调ID
-                "code": 1,      //结果0=成功;1=失败;2=listenKey⽆效
-                "msg": ""
+                "id": 1,          //请求回调ID
+                "result": "ok"
             }
         title: 响应报文格式
         language: javascript
 right_code_blocks:
     -
-        code_block: '{"id":"123", "code": 0, "msg": "success"}   '
+        code_block: '{"id": 1, "result": "ok"}'
         title: Response-成功
         language: json
     -
-        code_block: '{"id":"123", "code": 401, "msg": "token expire"}'
-        title: response-token失效
+        code_block: '{"id": 1, "error": "invalid channel"}'
+        title: Response-失败
         language: json
 ---

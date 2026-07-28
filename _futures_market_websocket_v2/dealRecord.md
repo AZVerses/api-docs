@@ -15,10 +15,10 @@ parameters:
 content_markdown: |-
     **request**
 
-    format: trade@\{symbol\}
+    format: deal@\{symbol\}
 
-    eg: trade@btc\_usdt
-    
+    eg: deal@btc\_usdt
+
     rate: real
 left_code_blocks:
     -
@@ -29,15 +29,12 @@ right_code_blocks:
     -
         code_block: |-
             {
-                "topic": "trade", 
-                "event": "trade@btc_usdt", 
-                "data": {
-                    "s":"btc_index", //trading pair
-                    "p":"50000",    //price
-                    "a":"0.1"   //Quantity
-                    "m": "BID"   //Deal side  BID:Buy ASK:Sell
-                    "t":123124124   //timestamp
-                }
+                "ch": "deal@btc_usdt",   //channel
+                "s": "btc_usdt",         //symbol
+                "p": "43000",            //price
+                "a": "0.21",             //quantity (base)
+                "m": "BID",              //taker side: BID or ASK
+                "t": 1655992403617       //time
             }
         title: Response
         language: json
