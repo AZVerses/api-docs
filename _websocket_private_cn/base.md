@@ -18,7 +18,7 @@ content_markdown: |-
     **生产环境: wss://s-ws.azverse.xyz/ws/account/spot**
     {: .info}
 
-    **测试环境: wss://s-ws.az-qa.xyz/ws/account/spot**
+    **测试环境: wss://s-ws.az-qa2.xyz/ws/account/spot**
     {: .info}
 
 

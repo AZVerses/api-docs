@@ -17,7 +17,7 @@ content_markdown: |-
     **生产环境: wss://f-ws.azverse.xyz/ws/account/futures**
     {: .info}
 
-    **测试环境: wss://f-ws.az-qa.xyz/ws/account/futures**
+    **测试环境: wss://f-ws.az-qa2.xyz/ws/account/futures**
     {: .info}
 
 

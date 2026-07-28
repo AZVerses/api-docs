@@ -17,7 +17,7 @@ content_markdown: |-
     **production environment: wss://f-ws.azverse.xyz/ws/account/futures**
     {: .info}
 
-    **sandbox environment: wss://f-ws.az-qa.xyz/ws/account/futures**
+    **sandbox environment: wss://f-ws.az-qa2.xyz/ws/account/futures**
     {: .info}
 
 

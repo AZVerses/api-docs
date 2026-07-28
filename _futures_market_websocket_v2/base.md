@@ -20,7 +20,7 @@ content_markdown: |-
     **production environment: wss://f-ws.azverse.xyz/futures/public**
     {: .info}
 
-    **sandbox environment: wss://f-ws.az-qa.xyz/futures/public**
+    **sandbox environment: wss://f-ws.az-qa2.xyz/futures/public**
     {: .info}
 
 

@@ -18,7 +18,7 @@ content_markdown: |-
     **production environment: wss://s-ws.azverse.xyz/ws/account/spot**
     {: .info}
 
-    **sandbox environment: wss://s-ws.az-qa.xyz/ws/account/spot**
+    **sandbox environment: wss://s-ws.az-qa2.xyz/ws/account/spot**
     {: .info}
 
 

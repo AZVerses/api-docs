@@ -20,7 +20,7 @@ content_markdown: |-
     **生产环境: wss://s-ws.azverse.xyz/spot/public**
     {: .info}
 
-    **测试环境: wss://s-ws.az-qa.xyz/spot/public**
+    **测试环境: wss://s-ws.az-qa2.xyz/spot/public**
     {: .info}
 
 
