@@ -25,10 +25,7 @@ content_markdown: |-
     ---
 
 
-    #### **协议（700 accounts-push 重构）**
-
-
-    这是重构后的私有账户 WebSocket 协议。鉴权、订阅、推送、应答均与旧版不同，字段均为短键。
+    #### **协议**
 
 
     * token 在**握手时携带**（不再有 LOGIN 报文）。从 `/az/spot/ws-token` 获取后，通过查询串 `?token=<accessToken>`（或 `?zToken=`）、或 `token` / `zToken` cookie、或 `Authorization: Bearer <accessToken>` 请求头传入。

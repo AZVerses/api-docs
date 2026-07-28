@@ -34,9 +34,7 @@ content_markdown: |-
     ---
 
 
-    #### **协议（700 accounts-push 重构）**
-
-    这是重构后的私有账户 WebSocket 协议。鉴权、订阅、心跳、推送与应答均与旧版不同；**不再需要 `listenKey`**。
+    #### **协议**
 
     * **鉴权在握手阶段完成（fail-closed）。** 在 WebSocket 升级请求上携带有效且未过期的登录 token，三选一：query（`?token=<token>` 或 `?zToken=<token>`）、cookie（`token` / `zToken`）、或 `Authorization: Bearer <token>` 头。若 token 缺失 / 无效 / 过期，服务端以 **HTTP 401** 拒绝握手并关闭连接（不返回任何 in-band 错误帧）。
 

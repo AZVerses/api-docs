@@ -25,10 +25,7 @@ content_markdown: |-
     ---
 
 
-    #### **Protocol (700 accounts-push rebuild)**
-
-
-    This is the rebuilt private account WebSocket protocol. Authentication, subscription, push and ack are all different from the old version and the field keys are short keys.
+    #### **Protocol**
 
 
     * The token is carried **on the handshake** (there is no LOGIN message any more). Fetch it from `/az/spot/ws-token` and pass it as `?token=<accessToken>` (or `?zToken=`) in the query string, or as a `token` / `zToken` cookie, or as an `Authorization: Bearer <accessToken>` header.

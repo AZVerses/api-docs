@@ -34,9 +34,7 @@ content_markdown: |-
     ---
 
 
-    #### **Protocol (700 accounts-push rebuild)**
-
-    This is the rebuilt private account WebSocket protocol. Authentication, subscription, heartbeat, push and ack are all different from the old version; there is **no more `listenKey`**.
+    #### **Protocol**
 
     * **Authentication is at handshake time (fail-closed).** Carry a valid, unexpired login token on the WebSocket upgrade request in any one of: query string (`?token=<token>` or `?zToken=<token>`), cookie (`token` / `zToken`), or `Authorization: Bearer <token>` header. If the token is missing / invalid / expired, the server rejects the handshake with **HTTP 401** and closes the connection (there is no in-band error frame).
 
