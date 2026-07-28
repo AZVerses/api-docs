@@ -14,8 +14,8 @@ content_markdown: >-
     请求头信息请设置为：Content-Type=application/x-www-form-urlencoded
 
 
-    除了接口本身所需的参数外，还需要在query Params 或 request body中传递 signature,
-    即签名参数，不需要传递签名参数的接口会额外说明。
+    除了接口本身所需的参数外，签名 signature 需通过请求头 `validate-signature` 传递（不放在 query Params 或 request body 中），
+    不需要传递签名参数的接口会额外说明。
 left_code_blocks:
 - code_block:
   title:

@@ -5,7 +5,7 @@ parameters:
 - name:
 content:
 content_markdown: |-
-  AZ API电报群： [AZ API Support Group](https://localhost)<br />
+  AZ API电报群： [AZ API Support Group](https://localhost)<br /> <!-- TODO: 占位链接，替换为真实的 Telegram 群地址 -->
    * <font size=3>咨询文档中没有提及的API问题</font>
    * <font size=3>咨询API或者Websocket性能方面的问题</font>
    * <font size=3>咨询做市相关的问题</font>

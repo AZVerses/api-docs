@@ -20,7 +20,7 @@ content_markdown: >-
     4. Add recvwindow (defining the valid time of the request), the valid time is currently relatively simple and uniformly fixed at a certain value.
     
 
-      When a request is received by the server, the timestamp in the request is checked to ensure it falls between 2 to 60 seconds. Any request with a timestamp older than 5,000 milliseconds is considered invalid. 
+      When a request is received by the server, the timestamp in the request is checked to ensure it falls between 5 to 60 seconds. Any request with a timestamp older than 5,000 milliseconds is considered invalid. 
       The time window value can be set using the optional parameter: "recvWindow". Additionally, if the server determines that the client's timestamp is more than one second ahead of the server, the request will also be invalid. 
       Online conditions are not always 100% reliable in terms of the timeliness of trades, resulting in varying levels of latency between your local program and the AZ server. This is why we provide the "recvWindow" parameter - if you engage in high-frequency trading and require stricter transaction timeliness, you can adjust the "recvWindow" parameter to better meet your needs.
       

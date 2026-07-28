@@ -60,8 +60,8 @@ examples:
   -
     name: validate-signversion
     mandatory: false
-    example: 1.0
-    description: Reserved, signature version number
+    example: "2"
+    description: Signature version number. When the value is "2", the query string is sorted in lexicographic order and the JSON body keys are sorted before signing.
 
 left_code_blocks:
 - code_block:

@@ -14,7 +14,7 @@ content_markdown: >-
     The request header information is set to: Content-Type=application/x-www-form-urlencoded
 
 
-    In addition to the parameters required by the interface itself, signature, which is the signature parameter, needs to be passed in the query Params or request body. The interface that does not need to pass the signature parameter will be additionally explained. 
+    In addition to the parameters required by the interface itself, the signature must be passed in the request header `validate-signature` (not in the query Params or request body). The interface that does not need to pass the signature parameter will be additionally explained. 
 left_code_blocks:
 - code_block:
   title:

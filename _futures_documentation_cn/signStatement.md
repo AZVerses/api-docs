@@ -62,8 +62,8 @@ examples:
   -
     name: validate-signversion
     mandatory: false
-    example: 1.0
-    description: 保留，签名版本号
+    example: "2"
+    description: 签名版本号。值为 "2" 时，query 按字典序、body 的 JSON key 排序后再签名。
 
 left_code_blocks:
 - code_block:

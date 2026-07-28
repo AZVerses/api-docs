@@ -5,7 +5,7 @@ parameters:
 - name:
 content:
 content_markdown: |-
-  AZ API Telegram Group: [AZ API Support Group](https://localhost)<br />
+  AZ API Telegram Group: [AZ API Support Group](https://localhost)<br /> <!-- TODO: replace placeholder link with the real Telegram group URL -->
   * <font size=3>For any general questions about the API not covered in the documentation.</font>
   * <font size=3>For any MM questions</font>
 

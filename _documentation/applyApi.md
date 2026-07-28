@@ -5,7 +5,7 @@ parameters:
 - name:
 content:
 content_markdown: >-
-    The interface may require the user's API Key,How to create API-KEY please refer to [here](https://localhost-)
+    The interface may require the user's API Key,How to create API-KEY please refer to [here](https://localhost-) <!-- TODO: replace placeholder link with the real API-Key creation page URL -->
 left_code_blocks:
 - code_block:
   title:
