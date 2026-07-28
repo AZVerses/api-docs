@@ -7,7 +7,7 @@ parameters:
     -
         name: symbol
         type: string
-        mandatory: true
+        mandatory: false
         default: N/A
         description: "Trading pairs (queries all trading pairs if not passed)\t"
         ranges:
@@ -75,6 +75,10 @@ right_code_blocks:
                 "createdTime": 0, //Time
                 "id": 0, //id
                 "side": "", //ADD:transfer in;SUB:transfer out
+                "accountId": 0, //Account id
+                "bonus": 0, //Bonus (trial fund) amount
+                "bonusDisRate": 0, //Bonus deduction rate
+                "positionType": "", //Position type: CROSSED;ISOLATED
                 "symbol": "", //Trading pair
                 "type": "" //EXCHANGE:transfer;CLOSE_POSITION:Offset profit and loss;TAKE_OVER:position takeover;QIANG_PING_MANAGER:Liquidation management fee (fee);FUND:Fund Fee;FEE:Fee(Open position, liquidation, Forced liquidation);ADL:Adl;TAKE_OVER:position takeover;MERGE:Position Merge
               }

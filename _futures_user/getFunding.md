@@ -7,7 +7,7 @@ parameters:
     -
         name: symbol
         type: string
-        mandatory: true
+        mandatory: false
         default: N/A
         description: "Trading pairs (queries all trading pairs if not passed)\t"
         ranges:

@@ -70,7 +70,6 @@ right_code_blocks:
             {
                 "orderId": "554845056780618880", //Order ID
                 "symbol": "btc_usdt",        //Trading pair
-                "contractSize": 1.0E-4,      //Contract size
                 "orderType": "LIMIT",        //Order type
                 "orderSide": "BUY",          //Order side
                 "positionSide": "LONG",      //Position side
@@ -78,8 +77,8 @@ right_code_blocks:
                 "timeInForce": "GTC",        //Valid type
                 "closePosition": false,      //Whether to close all when order condition is triggered
                 "price": "26972.9",          //Order price
-                "origQty": "4",              //Quantity (Cont)
-                "executedQty": "0",          //Volume (Cont)
+                "origQty": "4",              //Quantity (base)
+                "executedQty": "0",          //Volume (base)
                 "marginFrozen": "0.539458",  //Occupied margin
                 "sourceType": "DEFAULT",     //Source type
                 "forceClose": false,         //Is it a liquidation order
@@ -87,7 +86,6 @@ right_code_blocks:
                 "state": "NEW",              //Order state:NEW：New order (unfilled);PARTIALLY_FILLED:Partial deal;PARTIALLY_CANCELED:Partial revocation;FILLED:Filled;CANCELED:Cancled;REJECTED:Order failed;EXPIRED：Expired
                 "createdTime": 1761987370059,//Creat time
                 "updatedTime": 1761987370106,
-                "welfareAccount": false,     //Is Experience Fund
                 "markPrice": "110181.6",     //Mark Price
                 "profit": false              //Is Take-Profit/Stop-Loss Order Triggered
             }

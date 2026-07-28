@@ -38,9 +38,9 @@ right_code_blocks:
                 "positionType": "CROSSED",   //持仓模式
                 "positionSide": "LONG",      //持仓方向
                 "leverage": 20,              //杠杆倍数
-                "positionSize": "7000",      //持仓头寸数量(张)
+                "positionSize": "7000",      //持仓头寸数量（基础币）
                 "closeOrderSize": "0",
-                "availableCloseSize": "7000",  //可平仓数量(张)
+                "availableCloseSize": "7000",  //可平仓数量（基础币）
                 "entryPrice": "110000",        //开仓均价
                 "openOrderSize": "0", 
                 "isolatedMargin": "3850",      //持仓占用保证金

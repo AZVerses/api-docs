@@ -35,10 +35,10 @@ right_code_blocks:
                         "contractType": "PERPETUAL",               //Contract type, perpetual, delivery
                         "productType": "perpetual",                //Contract type, perpetual, futures, regardless of delivery interval
                         "underlyingType": "U_BASED",               //Target type, Coin-M,USDT-M
-                        "contractSize": "0.0001",                  //Contract multiplier(face value)
                         "tradeSwitch": true,                       //Trading pair switch
                         "openSwitch": true,
                         "isDisplay": true,                         //whether to display
+                        "isBlack": false,                          //Whether blacklisted for current builder
                         "isOpenApi": true,                         //Whether to support OpenApi
                         "state": 0,                                //Status
                         "initLeverage": 20,                        //Initial leverage
@@ -72,9 +72,12 @@ right_code_blocks:
                         "onboardDate": 1651327201000,              //List time
                         "enName": "BTCUSDT",                       //Contract English name
                         "cnName": "BTCUSDT ",                      //Contract Chinese name
+                        "displayNames": {                          //i18n display names (key=lang code, en always present)
+                            "en": "BTCUSDT"
+                        },
                         "minStepPrice": "0.1",                     //Smallest tick
-                        "deliveryDate": 1667819989000,             //delivery time
-                        "deliveryCompletion": false,               //Whether the delivery is completed
+                        "minPrice": "108600.0",                    //Contract price lower bound
+                        "maxPrice": "114308.1",                    //Contract price upper bound
                         "cnDesc": "cn btc",                        //Chinese description of the contract
                         "enDesc": "en en",                         //English description of the contract
                         "plates": [
@@ -86,7 +89,9 @@ right_code_blocks:
                         "maxTrackCallbackRate": "0.1",             //Trailing Order – Maximum Callback Rate
                         "latestPriceDeviation": 0.01,              //Deviation between Latest Price and Mark Price
                         "marketOpenTakeBound": 0.005,              //Market Order Opening Deviation Ratio
-                        "marketCloseTakeBound": 0.05               //Market Order Closing Deviation Ratio
+                        "marketCloseTakeBound": 0.05,              //Market Order Closing Deviation Ratio
+                        "builderWhiteList": null,                  //builder whitelist
+                        "builderBlackList": null                   //builder blacklist
               }
         }
       title: Response

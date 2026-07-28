@@ -34,10 +34,10 @@ right_code_blocks:
                         "contractType": "PERPETUAL",               //合约类型，永续，交割
                         "productType": "perpetual",                //合约类型，perpetual, futures，不区分交割间隔
                         "underlyingType": "U_BASED",               //标的类型，币本位，u本位
-                        "contractSize": "0.0001",                  //合约乘数（面值）
                         "tradeSwitch": true,                       //交易对开关
                         "openSwitch": true,
                         "isDisplay": true,                         //是否展示
+                        "isBlack": false,                          //是否对当前builder黑名单
                         "isOpenApi": true,                         //是否支持OpenApi
                         "state": 0,                                //状态
                         "initLeverage": 20,                        //初始杠杆倍数
@@ -71,9 +71,12 @@ right_code_blocks:
                         "onboardDate": 1651327201000,              //上线时间
                         "enName": "BTCUSDT",                       //合约英文名称
                         "cnName": "BTCUSDT ",                      //合约中文名称
+                        "displayNames": {                          //i18n展示名(键=语言码,en恒在)
+                            "en": "BTCUSDT"
+                        },
                         "minStepPrice": "0.1",                     //最小价格变动单位
-                        "deliveryDate": 1667819989000,             //交割时间
-                        "deliveryCompletion": false,               //交割是否完成
+                        "minPrice": "108600.0",                    //合约价格下限
+                        "maxPrice": "114308.1",                    //合约价格上限
                         "cnDesc": "cn btc",                        //合约中文描述
                         "enDesc": "en en",                         //合约英文描述
                         "plates": [                                //板块
@@ -85,7 +88,9 @@ right_code_blocks:
                         "maxTrackCallbackRate": "0.1",             //跟踪委托-最大回调率
                         "latestPriceDeviation": 0.01,              //最新价格与标记价格偏离
                         "marketOpenTakeBound": 0.005,              //市价开偏离比例
-                        "marketCloseTakeBound": 0.05               //市价平偏离比例
+                        "marketCloseTakeBound": 0.05,              //市价平偏离比例
+                        "builderWhiteList": null,                  //builder白名单
+                        "builderBlackList": null                   //builder黑名单
           }
         }
       title: Response

@@ -28,7 +28,8 @@ right_code_blocks:
             "allowTransfer": false, //Is it possible to transfer
             "openTime": "", //Opening time
             "state": 0, //User status
-            "userId": 0 //User ID
+            "userId": 0, //User ID
+            "userGroupId": 0 //User group ID
           },
           "returnCode": 0
         }

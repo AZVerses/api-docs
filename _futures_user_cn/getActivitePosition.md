@@ -33,10 +33,10 @@ right_code_blocks:
         "result": [
           {
             "autoMargin": false, // 是否自动追加保证金
-            "availableCloseSize": 0, // 可平仓数量（张）
+            "availableCloseSize": 0, // 可平仓数量（基础币）
             "breakPrice": 0, // 爆仓价格
             "calMarkPrice": 0, // 计算标记价格
-            "closeOrderSize": 0, // 平仓挂单数量（张）
+            "closeOrderSize": 0, // 平仓挂单数量（基础币）
             "contractType": "", // 合约类型：PERPETUAL（永续合约）、PREDICT（预测合约）
             "entryPrice": 0, // 开仓均价
             "floatingPL": 0, // 未实现盈亏
@@ -45,7 +45,7 @@ right_code_blocks:
             "openOrderMarginFrozen": 0, // 开仓订单保证金占用
             "openOrderSize": 0, // 开仓订单占用
             "positionSide": "", // 持仓方向
-            "positionSize": 0, // 持仓数量（张）
+            "positionSize": 0, // 持仓数量（基础币）
             "positionType": "", // 仓位类型：CROSSED（全仓）；ISOLATED（逐仓）
             "profitId": 0, // 止盈止损id
             "realizedProfit": 0, // 已实现盈亏

@@ -28,7 +28,8 @@ right_code_blocks:
             "allowTransfer": false, //是否可以划转
             "openTime": "", //开通时间
             "state": 0, //用户状态
-            "userId": 0 //用户id
+            "userId": 0, //用户id
+            "userGroupId": 0 //用户组id
           },
           "returnCode": 0
         }

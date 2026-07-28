@@ -31,7 +31,7 @@ parameters:
         type: number
         mandatory: true
         default: N/A
-        description: 数量（张）
+        description: 数量（base 币）
         ranges:
     -
         name: positionSide
@@ -39,7 +39,7 @@ parameters:
         mandatory: true
         default: N/A
         description: 持仓方向
-        ranges: BOTH;LONG;SHORT
+        ranges: LONG;SHORT
     -
         name: positionType
         type: string

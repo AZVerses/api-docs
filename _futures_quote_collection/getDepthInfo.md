@@ -18,7 +18,7 @@ parameters:
     mandatory: false
     default: 50
     description:
-    ranges: 1-200
+    ranges: 0-200
         
 content_markdown: Note：This method does not require a signature.
 left_code_blocks:

@@ -38,7 +38,7 @@ parameters:
         type: number
         mandatory: true
         default: N/A
-        description: Quantity (Cont)
+        description: Quantity (base)
         ranges:
     -
         name: price
@@ -52,8 +52,8 @@ parameters:
         type: string
         mandatory: false
         default: GTC
-        description: Valid way:GTC;IOC;FOK;GTX
-        ranges: GTC;IOC;FOK;GTX
+        description: Valid way:GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
+        ranges: GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
     -
         name: triggerProfitPrice
         type: number
@@ -80,11 +80,9 @@ content_markdown: |-
 
   ###### **Formula**  
 
-  origQty = Truncate ((Balance * Percent * Leverage ) / (Mark_price * Contract_size))
+  origQty = (Balance * Percent * Leverage ) / Mark_price
 
   ###### **Explain**
-
-      Truncate : take the integer part 
 
       Balance : (walletBalance - openOrderMarginFrozen) , api: /az/future/user/v1/compat/balance/list  
 
@@ -94,10 +92,10 @@ content_markdown: |-
 
       Mark_price : current symobl mark price , exp: 88888 (btc_usdt) 
 
-      Contract_size : contractSize , api: /az/future/market/v1/public/symbol/detail , Contract multiplier(face value)  
+      baseCoinPrecision : decimal precision kept for origQty (base coin) , api: /az/future/market/v1/public/symbol/detail  
 
   ###### **Example**
-  truncate(10000 * 0.2 * 20 / 88888 / 0.0001) = 4500
+  10000 * 0.2 * 20 / 88888 = 0.45 (kept to baseCoinPrecision)
 
   #### **Limit Flow Rules**
   200/s/apikey

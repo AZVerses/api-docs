@@ -60,7 +60,7 @@ tables:
         type: number
         mandatory: true
         default: N/A
-        description: Quantity (Cont)
+        description: Quantity (base)
         ranges:
       -
         name: price
@@ -74,8 +74,8 @@ tables:
         type: string
         mandatory: false
         default: GTC
-        description: Valid way:GTC;IOC;FOK;GTX
-        ranges: GTC;IOC;FOK;GTX
+        description: Valid way:GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
+        ranges: GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
       -
         name: triggerProfitPrice
         type: number

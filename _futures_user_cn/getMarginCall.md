@@ -38,7 +38,7 @@ right_code_blocks:
               "isolatedMargin": 0,//逐仓保证金
               "leverage": 0,      //杠杆倍数
               "positionSide": "", //持仓方向
-              "positionSize": 0,  //持仓数量（张）
+              "positionSize": 0,  //持仓数量（基础币）
               "positionType": "", //仓位类型:CROSSED(全仓);ISOLATED(逐仓)
               "symbol": ""        //交易对
             }

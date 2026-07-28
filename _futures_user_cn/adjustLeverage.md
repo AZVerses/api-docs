@@ -15,7 +15,7 @@ parameters:
     -
         name: positionSide
         type: string
-        mandatory: true
+        mandatory: false
         default: N/A
         description: 仓位方向
         ranges: LONG;SHORT
@@ -25,6 +25,13 @@ parameters:
         mandatory: true
         default: N/A
         description: 杠杆倍数
+        ranges:
+    -
+        name: specId
+        type: number
+        mandatory: false
+        default: N/A
+        description: 体验金券id
         ranges:
 content_markdown: |-
 

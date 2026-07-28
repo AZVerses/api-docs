@@ -32,14 +32,14 @@ right_code_blocks:
           "result": [
             {
               "autoMargin": false, //是否自动追加保证金
-              "availableCloseSize": 0, //可平仓数量（张）
-              "closeOrderSize": 0, //平仓挂单数量（张）
+              "availableCloseSize": 0, //可平仓数量（基础币）
+              "closeOrderSize": 0, //平仓挂单数量（基础币）
               "entryPrice": 0, //开仓均价
               "isolatedMargin": 0, //逐仓保证金
               "leverage": 0, //杠杆倍数
               "openOrderMarginFrozen": 0, //开仓订单保证金占用
               "positionSide": "", //持仓方向
-              "positionSize": 0, //持仓数量（张）
+              "positionSize": 0, //持仓数量（基础币）
               "positionType": "", //仓位类型
               "realizedProfit": 0, //已实现盈亏
               "symbol": "" //交易对

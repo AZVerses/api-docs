@@ -35,6 +35,7 @@ right_code_blocks:
                     "maxNominalValue": "50000", //Maximum notional value
                     "maintMarginRate": "0.004", //Maintain margin rate
                     "startMarginRate": "0.008", //Initial margin rate
+                    "maxStartMarginRate": "0.05", //Maximum initial margin rate
                     "maxLeverage": "125",       //Maximum leverage
                     "minLeverage": "1"          //Minimum leverage
               }

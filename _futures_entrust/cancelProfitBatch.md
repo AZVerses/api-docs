@@ -8,10 +8,31 @@ parameters:
     -
         name: symbol
         type: string
-        mandatory: true
+        mandatory: false
         default: N/A
-        description: Trading pair, e.g. btc_usdt
+        description: Trading pair, e.g. btc_usdt (cancels all trading pairs if not passed)
         ranges:
+    -
+        name: positionType
+        type: string
+        mandatory: false
+        default: N/A
+        description: Position type (cancels all position types if not passed)
+        ranges: CROSSED;ISOLATED
+    -
+        name: positionSide
+        type: string
+        mandatory: false
+        default: N/A
+        description: Position side (cancels all sides if not passed)
+        ranges: LONG;SHORT
+    -
+        name: closeType
+        type: string
+        mandatory: false
+        default: N/A
+        description: Close type (cancels all types if not passed)
+        ranges: FIXED;ALL
 content_markdown: |-
 
                  #### **Limit Flow Rules**

@@ -15,7 +15,7 @@ parameters:
     -
         name: positionSide
         type: string
-        mandatory: true
+        mandatory: false
         default: N/A
         description: 仓位方向
         ranges: LONG;SHORT
@@ -26,6 +26,20 @@ parameters:
         default: N/A
         description: 仓位类型
         ranges: CROSSED;ISOLATED
+    -
+        name: positionTypeAllSymbol
+        type: boolean
+        mandatory: false
+        default: N/A
+        description: 是否对所有交易对生效
+        ranges:
+    -
+        name: marginCoin
+        type: string
+        mandatory: false
+        default: quoteCoin
+        description: 保证金币种（可选，默认计价币）
+        ranges:
 content_markdown: |-
 
               #### **限流规则**

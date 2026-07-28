@@ -74,10 +74,9 @@ right_code_blocks:
                 "orderSide": "SELL",              //买卖方向
                 "orderType": "LIMIT",             //订单类型
                 "price": "2.0283",                //委托价格
-                "contractSize": 0.01,             //合约面值
-                "origQty": "494",                 //数量（张）
+                "origQty": "494",                 //数量（币）
                 "avgPrice": "2.0284",             //实际成交均价
-                "executedQty": "494",             //已成交数量（张）
+                "executedQty": "494",             //已成交数量（币）
                 "marginFrozen": "0",              //占用保证金
                 "state": "FILLED",                //订单状态 NEW：新建订单（未成交）；PARTIALLY_FILLED：部分成交；PARTIALLY_CANCELED：部分撤销；FILLED：全部成交；CANCELED：已撤销；REJECTED：下单失败；EXPIRED：已过期
                 "positionSide": "SHORT",          //持仓方向

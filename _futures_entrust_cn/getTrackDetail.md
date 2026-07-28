@@ -41,7 +41,7 @@ right_code_blocks:
             "executedQty": 0,          //实际成交数量
             "orderSide": "",           //买卖方向
             "ordinary": true,          //
-            "origQty": 0,              //数量（张）
+            "origQty": 0,              //数量（base 币）
             "positionSide": "",        //持仓方向
             "price": 0,                //订单价格
             "state": "",               //订单状态 NOT_ACTIVATION: 未激活；NOT_TRIGGERED：新建委托（未触发）；TRIGGERING：触发中；TRIGGERED：已触发；USER_REVOCATION：用户撤销；PLATFORM_REVOCATION：平台撤销（拒绝）；EXPIRED：已过期;DELEGATION_FAILED: 委托失败

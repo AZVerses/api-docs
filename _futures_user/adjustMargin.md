@@ -15,24 +15,31 @@ parameters:
     -
         name: margin
         type: number
-        mandatory: false
+        mandatory: true
         default: N/A
         description: Quantity
         ranges:
     -
         name: positionSide
         type: string
-        mandatory: false
+        mandatory: true
         default: N/A
         description: Position side:LONG;SHORT
         ranges:
     -
         name: type
         type: string
-        mandatory: false
+        mandatory: true
         default: N/A
         description: Adjust direction (add isolated margin, reduce isolated margin)
         ranges: ADD;SUB
+    -
+        name: marginCoin
+        type: string
+        mandatory: false
+        default: quoteCoin
+        description: Margin coin (optional, defaults to the quote coin)
+        ranges:
 content_markdown: |-
 
                #### **Limit Flow Rules**

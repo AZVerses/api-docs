@@ -8,10 +8,31 @@ parameters:
     -
         name: symbol
         type: string
-        mandatory: true
+        mandatory: false
         default: 
-        description: 交易对，例如btc_usdt
+        description: 交易对，例如btc_usdt（不传时撤销所有交易对）
         ranges:
+    -
+        name: positionType
+        type: string
+        mandatory: false
+        default: N/A
+        description: 仓位类型（不传时撤销所有仓位类型）
+        ranges: CROSSED;ISOLATED
+    -
+        name: positionSide
+        type: string
+        mandatory: false
+        default: N/A
+        description: 仓位方向（不传时撤销所有方向）
+        ranges: LONG;SHORT
+    -
+        name: closeType
+        type: string
+        mandatory: false
+        default: N/A
+        description: 止盈止损平仓类型（不传时撤销所有类型）
+        ranges: FIXED;ALL
 content_markdown: |-
                  #### **限流规则**
 

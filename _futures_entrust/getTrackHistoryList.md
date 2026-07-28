@@ -65,29 +65,31 @@ right_code_blocks:
           },
           "msgInfo": "",
           "result": {
-            hasNext: true,               //Is there a next page
-            hasPre: true,                //Is there a previous page
-            items:[
-              "activationPrice": 0,      //Activation price
-              "avgPrice": 0,             //Average price
-              "callback": "",            //Callback range configuration 1:PROPORTION 2:FIXED
-              "callbackVal": 0,          //Callback value
-              "configActivation": false, //Whether to configure activation price
-              "createdTime": 0,          //Creat time
-              "currentPrice": 0,         //Real-time price, compared with the activation price and order price, to determine the direction of the activation price
-              "desc": "",                //Describe
-              "executedQty": 0,          //Actual transaction quantity
-              "orderSide": "",           //Order side
-              "ordinary": true,          //
-              "origQty": 0,              //Quantity (Cont)
-              "positionSide": "",        //Position side
-              "price": 0,                //Order price
-              "state": "",               //Order state: NOT_ACTIVATION:inactivated;NOT_TRIGGERED:not triggered;TRIGGERING:triggering;TRIGGERED:triggered;USER_REVOCATION:user revocation;PLATFORM_REVOCATION:platform rejects;EXPIRED:expired;DELEGATION_FAILED:delegation failed
-              "stopPrice": 0,            //Trigger price
-              "symbol": "",              //Symbol
-              "trackId": 0,              //Track id
-              "triggerPriceType": "",    //Trigger price type
-              "updatedTime": 0           //Update time
+            "hasNext": true,               //Is there a next page
+            "hasPre": true,                //Is there a previous page
+            "items": [
+              {
+                "activationPrice": 0,      //Activation price
+                "avgPrice": 0,             //Average price
+                "callback": "",            //Callback range configuration 1:PROPORTION 2:FIXED
+                "callbackVal": 0,          //Callback value
+                "configActivation": false, //Whether to configure activation price
+                "createdTime": 0,          //Creat time
+                "currentPrice": 0,         //Real-time price, compared with the activation price and order price, to determine the direction of the activation price
+                "desc": "",                //Describe
+                "executedQty": 0,          //Actual transaction quantity
+                "orderSide": "",           //Order side
+                "ordinary": true,          //
+                "origQty": 0,              //Quantity (base coin)
+                "positionSide": "",        //Position side
+                "price": 0,                //Order price
+                "state": "",               //Order state: NOT_ACTIVATION:inactivated;NOT_TRIGGERED:not triggered;TRIGGERING:triggering;TRIGGERED:triggered;USER_REVOCATION:user revocation;PLATFORM_REVOCATION:platform rejects;EXPIRED:expired;DELEGATION_FAILED:delegation failed
+                "stopPrice": 0,            //Trigger price
+                "symbol": "",              //Symbol
+                "trackId": 0,              //Track id
+                "triggerPriceType": "",    //Trigger price type
+                "updatedTime": 0           //Update time
+              }
             ]
           },
           "returnCode": 0

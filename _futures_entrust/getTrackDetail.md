@@ -41,7 +41,7 @@ right_code_blocks:
             "executedQty": 0,          //Actual transaction quantity
             "orderSide": "",           //Order side
             "ordinary": true,          //
-            "origQty": 0,              //Quantity (Cont)
+            "origQty": 0,              //Quantity (base coin)
             "positionSide": "",        //Position side
             "price": 0,                //Order price
             "state": "",               //Order state: NOT_ACTIVATION:inactivated;NOT_TRIGGERED:not triggered;TRIGGERING:triggering;TRIGGERED:triggered;USER_REVOCATION:user revocation;PLATFORM_REVOCATION:platform rejects;EXPIRED:expired;DELEGATION_FAILED:delegation failed

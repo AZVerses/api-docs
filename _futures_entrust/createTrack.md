@@ -31,7 +31,7 @@ parameters:
         type: number
         mandatory: true
         default: N/A
-        description: Original quantity(count)
+        description: Original quantity (base coin)
         ranges:
     -
         name: positionSide
@@ -39,7 +39,7 @@ parameters:
         mandatory: true
         default: N/A
         description: Position side:LONG;SHORT
-        ranges: BOTH;LONG;SHORT
+        ranges: LONG;SHORT
     -
         name: positionType
         type: string

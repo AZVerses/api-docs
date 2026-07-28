@@ -38,9 +38,9 @@ right_code_blocks:
                 "positionType": "CROSSED",   //Position type
                 "positionSide": "LONG",      //Position side
                 "leverage": 20,              //Leverage
-                "positionSize": "7000",      //Position quantity (Cont)
-                "closeOrderSize": "0",       //Quantity of open order (Cont)
-                "availableCloseSize": "7000",  //Available quantity (Cont)
+                "positionSize": "7000",      //Position quantity (base coin)
+                "closeOrderSize": "0",       //Quantity of open order (base coin)
+                "availableCloseSize": "7000",  //Available quantity (base coin)
                 "entryPrice": "110000",        //Average opening price
                 "openOrderSize": "0",          //Opening warehouse orders occupied
                 "isolatedMargin": "3850",      //Isolated Margin

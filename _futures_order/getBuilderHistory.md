@@ -74,10 +74,9 @@ right_code_blocks:
                 "orderSide": "SELL",                      //Order side
                 "orderType": "LIMIT",                     //Order type
                 "price": "2.0283",                        //Order price
-                "contractSize": 0.01,                     //Contract size
-                "origQty": "494",                         //Quantity (Cont)
+                "origQty": "494",                         //Quantity (base)
                 "avgPrice": "2.0284",
-                "executedQty": "494",                     //Volume (Cont)
+                "executedQty": "494",                     //Volume (base)
                 "marginFrozen": "0",                      //Occupied margin
                 "state": "FILLED",                        //Order state:NEW：New order (unfilled);PARTIALLY_FILLED:Partial deal;PARTIALLY_CANCELED:Partial revocation;FILLED:Filled;CANCELED:Cancled;REJECTED:Order failed;EXPIRED：Expired
                 "positionSide": "SHORT",                  //Position side

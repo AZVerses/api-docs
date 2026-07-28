@@ -8,9 +8,9 @@ parameters:
     -
         name: symbol
         type: string
-        mandatory: true
+        mandatory: false
         default: 
-        description: Trading pair. e.g. btc_usdt
+        description: Trading pair, e.g. btc_usdt (cancels all trading pairs if not passed)
         ranges:
 content_markdown: |-
 

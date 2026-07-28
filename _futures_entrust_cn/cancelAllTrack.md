@@ -5,6 +5,13 @@ type: post
 description: /az/future/trade/v1/entrust/cancel-all-track
 remark: Content-Type = application/x-www-form-urlencoded
 parameters:
+    -
+        name: symbol
+        type: string
+        mandatory: false
+        default: N/A
+        description: 交易对，例如btc_usdt（不传时撤销所有交易对）
+        ranges:
 content_markdown: |-
 
                 #### **限流规则**

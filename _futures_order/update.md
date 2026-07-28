@@ -24,7 +24,7 @@ parameters:
         type: number
         mandatory: true
         default: 
-        description: Target quantity (cont)
+        description: Target quantity (base)
         ranges:
     -
         name: triggerProfitPrice
@@ -60,7 +60,7 @@ parameters:
         mandatory: false
         default: N/A
         description: Take-Profit order validity method
-        ranges: GTC;IOC;FOK;GTX
+        ranges: GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
     -
         name: profitDelegatePrice
         type: number
@@ -81,7 +81,7 @@ parameters:
         mandatory: false
         default: N/A
         description: Stop-Loss order validity method
-        ranges: GTC;IOC;FOK;GTX
+        ranges: GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
     -
         name: stopDelegatePrice
         type: number

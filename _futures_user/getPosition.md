@@ -32,14 +32,14 @@ right_code_blocks:
           "result": [
             {
               "autoMargin": false, //Whether to automatically call margin
-              "availableCloseSize": 0, //Available quantity (Cont)
-              "closeOrderSize": 0, //Pending order quantity (Cont)
+              "availableCloseSize": 0, //Available quantity (base coin)
+              "closeOrderSize": 0, //Pending order quantity (base coin)
               "entryPrice": 0, //Open position average price
               "isolatedMargin": 0, //Isolated Margin
               "leverage": 0, //Leverage
               "openOrderMarginFrozen": 0, //Occupied open position margin
               "positionSide": "", //Position side
-              "positionSize": 0, //Position quantity (Cont)
+              "positionSize": 0, //Position quantity (base coin)
               "positionType": "", //Position type
               "realizedProfit": 0, //Realized profit and loss
               "symbol": "" //Trading pair

@@ -38,7 +38,7 @@ parameters:
         type: number
         mandatory: true
         default: N/A
-        description: 数量（张）
+        description: 数量（币）
         ranges:
     -
         name: price
@@ -52,8 +52,8 @@ parameters:
         type: string
         mandatory: false
         default: GTC
-        description: 有效方式：GTC;IOC;FOK;GTX
-        ranges: GTC;IOC;FOK;GTX
+        description: 有效方式：GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
+        ranges: GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
     -
         name: triggerProfitPrice
         type: number
@@ -80,11 +80,9 @@ content_markdown: |-
 
   ###### **公式**  
 
-   origQty = Truncate ((Balance * Percent * Leverage ) / (Mark_price * Contract_size))
+   origQty = (Balance * Percent * Leverage ) / Mark_price
 
   ###### **解释**
-
-      Truncate : 取整数部分 
 
       Balance : (walletBalance - openOrderMarginFrozen) , api: /az/future/user/v1/compat/balance/list  
 
@@ -94,10 +92,10 @@ content_markdown: |-
 
       Mark_price : 市场标记价格 , 例如: 88888 (btc_usdt) 
 
-      Contract_size : 合约面值 , api: /az/future/market/v1/public/symbol/detail , Contract multiplier(face value)  
+      baseCoinPrecision : origQty（币量）保留的小数精度 , api: /az/future/market/v1/public/symbol/detail  
 
   ###### **举例**
-   truncate(10000 * 0.2 * 20 / 88888 / 0.0001) = 4500
+   10000 * 0.2 * 20 / 88888 = 0.45 (按 baseCoinPrecision 保留精度)
 
   #### **限流规则**
   200/s/apikey

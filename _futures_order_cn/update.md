@@ -24,7 +24,7 @@ parameters:
         type: number
         mandatory: true
         default: 
-        description: 目标数量（张）
+        description: 目标数量（币）
         ranges:
     -
         name: triggerProfitPrice
@@ -60,7 +60,7 @@ parameters:
         mandatory: false
         default: N/A
         description: 止盈委托有效方式
-        ranges: GTC;IOC;FOK;GTX
+        ranges: GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
     -
         name: profitDelegatePrice
         type: number
@@ -81,7 +81,7 @@ parameters:
         mandatory: false
         default: N/A
         description: 止损委托有效方式
-        ranges: GTC;IOC;FOK;GTX
+        ranges: GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
     -
         name: stopDelegatePrice
         type: number

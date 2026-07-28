@@ -59,9 +59,9 @@ right_code_blocks:
                     "positionType": "CROSSED",         //Position type
                     "timeInForce": "GTC",              //Valid type
                     "price": "90000",                  //Order price
-                    "origQty": "10000",                //Quantity (Cont)
+                    "origQty": "10000",                //Quantity (base)
                     "avgPrice": null,                  //Average Price
-                    "executedQty": "0",                //Volume (Cont)
+                    "executedQty": "0",                //Volume (base)
                     "marginFrozen": "4554",            //Occupied margin
                     "leverage": 20,                    //Leverage
                     "openPrice": null,

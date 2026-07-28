@@ -15,7 +15,7 @@ parameters:
     -
         name: positionSide
         type: string
-        mandatory: true
+        mandatory: false
         default: N/A
         description: Position side
         ranges: LONG;SHORT
@@ -25,6 +25,13 @@ parameters:
         mandatory: true
         default: N/A
         description: Leverage
+        ranges:
+    -
+        name: specId
+        type: number
+        mandatory: false
+        default: N/A
+        description: Trial fund (experience coupon) id
         ranges:
 content_markdown: |-
 

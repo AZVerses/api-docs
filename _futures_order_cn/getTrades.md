@@ -81,8 +81,7 @@ right_code_blocks:
                         "orderId": "551497070209712960", //订单id
                         "execId": "551497070368784451",  //成交id
                         "symbol": "btc_usdt",            //交易对
-                        "contractSize": 1.0E-4,          //合约面值
-                        "quantity": "4",                 //成交数量
+                        "quantity": "4",                 //成交数量（币）
                         "price": "108460.5",             //成交价格
                         "fee": "0.02603052",             //手续费
                         "feeCoin": "usdt",               //手续费币种

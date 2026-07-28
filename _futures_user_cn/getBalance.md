@@ -37,6 +37,9 @@ right_code_blocks:
             "crossedMargin": 0,         //全仓起始保证金
             "bonus": 0,                 //体验金余额
             "coupon": 0,                //抵扣金余额
+            "depositCoupon": 0,         //充值抵扣金
+            "openOrderFeeFrozen": 0,    //订单手续费冻结
+            "bonusDisRate": 0,          //触发时的体验金抵扣率
             "walletBalance": 0          //钱包余额
           },
           "returnCode": 0

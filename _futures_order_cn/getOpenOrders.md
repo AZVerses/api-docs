@@ -59,9 +59,9 @@ right_code_blocks:
                     "positionType": "CROSSED",         //仓位类型
                     "timeInForce": "GTC",              //有效类型
                     "price": "90000",                  //委托价格
-                    "origQty": "10000",                //数量（张）
+                    "origQty": "10000",                //数量（币）
                     "avgPrice": null,                  //平均价格
-                    "executedQty": "0",                //已成交数量（张）
+                    "executedQty": "0",                //已成交数量（币）
                     "marginFrozen": "4554",            //占用保证金
                     "leverage": 20,                    //下单时杠杠
                     "openPrice": null,

@@ -29,10 +29,12 @@ right_code_blocks:
           "index_price": "1816.61",         //Underlying index price
           "last_price": "1817.31",          //Latest price
           "low": "1778.65",                 //24-hour lowest trading price
+          "mark_price": "1817.05",          //Mark price
           "next_funding_rate": "-0.03",     //Upcoming predicted funding rate
           "next_funding_rate_timestamp":1698681600000,  //Next funding rate time
           "open_interest": "2419347630",    //The open interest in the last 24 hours in contracts
-          "product_type": "PERPETUAL",      //Product type
+          "product_type": "Futures",        //Product type
+          "recent_24h_change": "0.0123",    //24-hour change
           "start_timestamp": 1651328033000, //Starting of this derivative product (relevant for expirable futures or options)
           "symbol": "eth_usd",
           "target_currency": "USD",         //Symbol/currency code of target pair, eg. ETH

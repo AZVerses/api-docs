@@ -35,6 +35,7 @@ right_code_blocks:
                     "maxNominalValue": "50000", //该层最大名义价值
                     "maintMarginRate": "0.004", //维持保证金率
                     "startMarginRate": "0.008", //起始保证金率
+                    "maxStartMarginRate": "0.05", //最大起始保证金率
                     "maxLeverage": "125",       //最大杠杆倍数
                     "minLeverage": "1"          //最小杠杆倍数
                   }

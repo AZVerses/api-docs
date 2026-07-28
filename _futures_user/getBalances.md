@@ -32,6 +32,8 @@ right_code_blocks:
                 "availableBalance": "4999988.05001959", //Available balance
                 "bonus": "0",                           //Bouns
                 "bonusDisRate": "0.5",                  //Experience Fund Deduction Rate at Trigger
+                "depositCoupon": "0",                   //Deposit coupon
+                "openOrderFeeFrozen": "0",              //Frozen order fee
                 "coupon": "0"                           //Coupon        
             }
           ]

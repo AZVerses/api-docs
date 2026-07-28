@@ -15,7 +15,7 @@ parameters:
     -
         name: positionSide
         type: string
-        mandatory: true
+        mandatory: false
         default: N/A
         description: Position side
         ranges: LONG;SHORT
@@ -26,6 +26,20 @@ parameters:
         default: N/A
         description: Position type
         ranges: CROSSED;ISOLATED
+    -
+        name: positionTypeAllSymbol
+        type: boolean
+        mandatory: false
+        default: N/A
+        description: Whether to apply the position type change to all trading pairs
+        ranges:
+    -
+        name: marginCoin
+        type: string
+        mandatory: false
+        default: quoteCoin
+        description: Margin coin (optional, defaults to the quote coin)
+        ranges:
 content_markdown: |-
 
               #### **Limit Flow Rules**

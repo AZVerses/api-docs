@@ -81,8 +81,7 @@ right_code_blocks:
                         "orderId": "551497070209712960", //Order Id
                         "execId": "551497070368784451",  //Execution Id
                         "symbol": "btc_usdt",            //Symbol
-                        "contractSize": 1.0E-4,          //Contract Size
-                        "quantity": "4",                 //Volume
+                        "quantity": "4",                 //Volume (base)
                         "price": "108460.5",             //Price
                         "fee": "0.02603052",             //Fee
                         "feeCoin": "usdt",               //Currency of fee

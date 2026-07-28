@@ -38,7 +38,7 @@ right_code_blocks:
               "isolatedMargin": 0,//Isolated Margin
               "leverage": 0,      //Leverage
               "positionSide": "", //Position side:LONG;SHORT
-              "positionSize": 0,  //Position quantity (Cont)
+              "positionSize": 0,  //Position quantity (base coin)
               "positionType": "", //Position type:CROSSED;ISOLATED
               "symbol": ""        //Symbol
             }

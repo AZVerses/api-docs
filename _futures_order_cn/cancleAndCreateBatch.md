@@ -60,7 +60,7 @@ tables:
         type: number
         mandatory: true
         default: N/A
-        description: 数量（张）
+        description: 数量（币）
         ranges:
       -
         name: price
@@ -74,8 +74,8 @@ tables:
         type: string
         mandatory: false
         default: GTC
-        description: 有效方式：GTC;IOC;FOK;GTX
-        ranges: GTC;IOC;FOK;GTX
+        description: 有效方式：GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
+        ranges: GTC;IOC;FOK;GTX;RPI;GTX_SELF_CANCEL
       -
         name: triggerProfitPrice
         type: number

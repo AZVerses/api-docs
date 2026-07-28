@@ -33,10 +33,10 @@ right_code_blocks:
         "result": [
           {
             "autoMargin": false, // Whether to automatically call margin
-            "availableCloseSize": 0, // Available quantity (Cont)
+            "availableCloseSize": 0, // Available quantity (base coin)
             "breakPrice": 0, // Blowout price
             "calMarkPrice": 0, // Calculated mark price
-            "closeOrderSize": 0, // Quantity of open order (Cont)
+            "closeOrderSize": 0, // Quantity of open order (base coin)
             "contractType": "", // Contract Types: PERPETUAL (Perpetual Contract), PREDICT (Predict Contract)
             "entryPrice": 0, // Average opening price
             "floatingPL": 0, // Unrealized profit or loss
@@ -45,7 +45,7 @@ right_code_blocks:
             "openOrderMarginFrozen": 0, // Occupation of deposit for opening order
             "openOrderSize": 0, // Opening warehouse orders occupied
             "positionSide": "", // Position direction
-            "positionSize": 0, // Position quantity (Cont)
+            "positionSize": 0, // Position quantity (base coin)
             "positionType": "", // Position type: CROSSED (full position); ISOLATED (warehouse by warehouse)
             "profitId": 0, // Take profit and stop loss id
             "realizedProfit": 0, // Realized profit and loss

@@ -5,7 +5,13 @@ type: post
 description: /az/future/trade/v1/entrust/cancel-all-track
 remark: Content-Type = application/x-www-form-urlencoded
 parameters:
-  
+    -
+        name: symbol
+        type: string
+        mandatory: false
+        default: N/A
+        description: Trading pair, e.g. btc_usdt (cancels all trading pairs if not passed)
+        ranges:
 content_markdown: |-
 
                 #### **Limit Flow Rules**

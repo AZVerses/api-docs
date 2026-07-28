@@ -15,24 +15,31 @@ parameters:
     -
         name: margin
         type: number
-        mandatory: false
+        mandatory: true
         default: N/A
         description: 数量
         ranges:
     -
         name: positionSide
         type: string
-        mandatory: false
+        mandatory: true
         default: N/A
         description: 持仓方向：LONG;SHORT
         ranges:
     -
         name: type
         type: string
-        mandatory: false
+        mandatory: true
         default: N/A
         description: 调整方向（ADD：增加逐仓保证金；SUB：减少逐仓保证金）
         ranges: ADD;SUB
+    -
+        name: marginCoin
+        type: string
+        mandatory: false
+        default: quoteCoin
+        description: 保证金币种（可选，默认计价币）
+        ranges:
 content_markdown: |-
 
              #### **限流规则**

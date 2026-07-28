@@ -33,6 +33,8 @@ right_code_blocks:
                 "availableBalance": "4999988.05001959", //可用余额
                 "bonus": "0",                           //体验金余额
                 "bonusDisRate": "0.5",                  //触发时的体验金抵扣率
+                "depositCoupon": "0",                   //充值抵扣金
+                "openOrderFeeFrozen": "0",              //订单手续费冻结
                 "coupon": "0"                           //抵扣金余额        
             }
           ]

@@ -28,7 +28,8 @@ right_code_blocks:
         "returnCode": 0,
         "result": {
                 "s": "btc_usdt",    //Trading pair
-                "t": 1761983754635, //Timestamp
+                "ts": 1761983754635,     //Timestamp
+                "u": 137333589606963580, //matching book updateId
                 "ap": "110045.0",   //ask price
                 "aq": "13619",      //ask amount
                 "bp": "110044.9",   //bid price

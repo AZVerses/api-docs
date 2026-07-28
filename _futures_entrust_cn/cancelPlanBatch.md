@@ -8,9 +8,9 @@ parameters:
     -
         name: symbol
         type: string
-        mandatory: true
+        mandatory: false
         default: 
-        description: 交易对，例如btc_usdt
+        description: 交易对，例如btc_usdt（不传时撤销所有交易对）
         ranges:
 content_markdown: |-
 

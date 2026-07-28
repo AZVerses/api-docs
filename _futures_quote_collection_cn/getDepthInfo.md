@@ -18,7 +18,7 @@ parameters:
     mandatory: false
     default: 50
     description: 
-    ranges: 1-200
+    ranges: 0-200
         
 content_markdown: Note：这个方法不需要签名
 left_code_blocks:

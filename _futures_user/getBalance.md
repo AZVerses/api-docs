@@ -37,6 +37,9 @@ right_code_blocks:
             "crossedMargin": 0,         //Crossed Margin
             "bonus": 0,                 //Bouns
             "coupon": 0,                //Coupon
+            "depositCoupon": 0,         //Deposit coupon
+            "openOrderFeeFrozen": 0,    //Frozen order fee
+            "bonusDisRate": 0,          //Experience Fund Deduction Rate at Trigger
             "walletBalance": 0          //Balance
           },
           "returnCode": 0

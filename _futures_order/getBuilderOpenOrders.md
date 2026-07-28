@@ -74,10 +74,9 @@ right_code_blocks:
                 "orderSide": "BUY",              //Order side
                 "orderType": "LIMIT",            //Order type
                 "price": "4.92",                 //Order price
-                "contractSize": 1.0,             //Contract size
-                "origQty": "1000",               //Quantity (Cont)
+                "origQty": "1000",               //Quantity (base)
                 "avgPrice": "4.92",              //Average Price
-                "executedQty": "167",            //Volume (Cont)
+                "executedQty": "167",            //Volume (base)
                 "marginFrozen": "412.05",        //Occupied margin
                 "state": "PARTIALLY_FILLED",     //Order State NEW,PLACED,PARTIALLY_FILLED
                 "positionSide": "LONG",          //Position side

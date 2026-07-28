@@ -29,10 +29,12 @@ right_code_blocks:
           "index_price": "1816.61",         //基础指数价格
           "last_price": "1817.31",          //最新价格
           "low": "1778.65",                 //24小时最低成交价
+          "mark_price": "1817.05",          //标记价格
           "next_funding_rate": "-0.03",     //预计下一个资金费率
           "next_funding_rate_timestamp":1698681600000,  //下一个资金费率时间
           "open_interest": "2419347630",    //24小时合约持仓量
-          "product_type": "PERPETUAL",      //产品类型
+          "product_type": "Futures",        //产品类型
+          "recent_24h_change": "0.0123",    //24小时涨跌幅
           "start_timestamp": 1651328033000, //该衍生品的开始时间
           "symbol": "eth_usd",
           "target_currency": "USD",         //报价币种

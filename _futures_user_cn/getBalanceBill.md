@@ -7,7 +7,7 @@ parameters:
     -
         name: symbol
         type: string
-        mandatory: true
+        mandatory: false
         default: N/A
         description: 交易对
         ranges:
@@ -75,6 +75,10 @@ right_code_blocks:
                 "createdTime": 0, //时间
                 "id": 0, //id
                 "side": "", //ADD:划入;SUB:转出
+                "accountId": 0, //账户id
+                "bonus": 0, //体验金数量
+                "bonusDisRate": 0, //体验金抵扣比例
+                "positionType": "", //仓位类型：CROSSED;ISOLATED
                 "symbol": "", //交易对
                 "type": "" //EXCHANGE:划转;CLOSE_POSITION:平仓盈亏;TAKE_OVER:仓位接管;QIANG_PING_MANAGER:强平管理费（手续费）;FUND:资金费用;FEE:手续费 (开仓、平仓、强平);ADL:自动减仓;TAKE_OVER:仓位接管MERGE:仓位合并
               }
