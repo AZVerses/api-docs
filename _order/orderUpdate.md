@@ -55,8 +55,9 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "orderId": "6216559590087220004",   //order id
-                    "modifyId": "407329711723834560"    //modify id
+                    "orderId": "6216559590087220004",       //order id
+                    "modifyId": "407329711723834560",       //modify id
+                    "clientModifyId": "16559590087220001"   //client modify id
                   }
                 }
         title: Response

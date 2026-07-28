@@ -143,7 +143,7 @@ right_code_blocks:
                         "index": "0", // start with 0 
                         "clientOrderId": "123", 
                         "orderId": "123", 
-                        "reject": "false", 
+                        "rejected": false,  // whether rejected 
                         "reason": "invalid price precision" 
                       }
                     ]

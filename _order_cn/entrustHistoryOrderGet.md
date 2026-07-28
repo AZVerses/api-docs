@@ -1,8 +1,8 @@
 ---
-title: 历史订单查询
-position_number: 10
+title: 委托历史订单查询
+position_number: 18
 type: get
-description: /az/spot/history-order
+description: /az/spot/entrust-order/history
 parameters:
     -
         name: symbol
@@ -16,8 +16,14 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: >-
-            业务类型  SPOT-现货, PREDICTION-预测市场
+        description: "业务类型 SPOT-现货"
+        ranges:
+    -
+        name: type
+        type: string
+        mandatory: false
+        default:
+        description: "委托类型，仅限 ENTRUST_PROFIT, ENTRUST_TRACK"
         ranges:
     -
         name: side
@@ -27,20 +33,11 @@ parameters:
         description: BUY-买,SELL-卖
         ranges:
     -
-        name: type
-        type: string
-        mandatory: false
-        default:
-        description: 订单类型   LIMIT-限价, MARKET-市价
-        ranges:
-    -
         name: state
         type: string
         mandatory: false
         default:
-        description: >-
-            订单<a href="#orderStatusCn">状态</a>
-            NEW-新建,PARTIALLY_FILLED-部分成交,FILLED-全部成交,CANCELED-用户撤单,REJECTED-下单失败,EXPIRED-过期(time_in_force撤单或溢价撤单)
+        description: '委托订单状态：NEW-新建, TRIGGERED-已触发, EXPIRED-已过期, CANCELED-已撤销'
         ranges:
     -
         name: fromId
@@ -109,40 +106,36 @@ right_code_blocks:
               "result": {
                 "hasPrev": true,
                 "hasNext": true,
-                "items": [   //内容信息参考单笔获取订单接口
+                "items": [   //字段信息参考委托单笔获取接口
                   {
-                    "symbol": "BTC_USDT",
-                    "orderId": "6216559590087220004",
+                    "id": "6216559590087220004",
                     "clientOrderId": "16559590087220001",
-                    "rfq": false,
-                    "baseCurrency": "string",
-                    "quoteCurrency": "string",
-                    "side": "BUY",
-                    "type": "LIMIT",
-                    "timeInForce": "GTC",
+                    "accountId": 123456,
+                    "userId": "123456",
+                    "symbolId": 1001,
+                    "symbol": "BTC_USDT",
+                    "side": "1",
+                    "type": "3",
+                    "timeInForce": "1",
+                    "bizType": "1",
                     "price": "40000",
-                    "origQty": "2",
-                    "origQuoteQty": "48000",
-                    "executedQty": "1.2",
-                    "leavingQty": "string",
-                    "tradeBase": "2",
-                    "tradeQuote": "48000",
-                    "avgPrice": "42350",
-                    "fee": "string",
-                    "feeCurrency": "string",
-                    "nftId": "string",
-                    "symbolType": "normal",
-                    "origRestFee": "string",
-                    "origFeeCurrency": "string",
-                    "platFormCurrencyFee": "string",
-                    "platFormCurrency": "string",
-                    "couponAmount": "string",
-                    "couponCurrency": "string",
-                    "couponDeductFee": "string",
-                    "closed": false,
-                    "state": "NEW",
-                    "time": 1655958915583,
+                    "quantity": "2",
+                    "quoteQty": "48000",
+                    "triggerPrice": "41000",
+                    "currentPrice": "40500",
+                    "activePrice": "40000",
+                    "turnRate": "2",
+                    "priceDiff": "2",
+                    "extremePrice": "40000",
+                    "closed": true,
+                    "closedTime": 1655971400834,
+                    "state": "2",
+                    "activeState": "1",
+                    "triggerTime": 1655971400834,
+                    "triggerState": "1",
+                    "rejectReason": "string",
                     "ip": "127.0.0.1",
+                    "createdTime": 1655958915583,
                     "updatedTime": 1655958915583
                   }
                 ]

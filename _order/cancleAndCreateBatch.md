@@ -37,7 +37,7 @@ tables:
         mandatory: false
         default:
         description: Cancellation list — a collection of order IDs.
-        ranges: Supports up to 100
+        ranges: Supports up to 300
   - title: OrderCreateReqDTO
     data:
       -
@@ -121,11 +121,11 @@ content_markdown: |-
 right_code_blocks:
   - code_block: |-
       {
-        "error": {
-          "code": "",
-          "msg": ""
-        },
-        "msgInfo": "success",
+        "rc": 0,
+        "mc": "string",
+        "ma": [
+          {}
+        ],
         "result": [{
                       "createOrdersResponse": [
                         {
@@ -140,8 +140,7 @@ right_code_blocks:
                           "cancelState": "ORDER_000"  //Refer to response code
                         }
                       ]      
-                  }],
-        "returnCode": 0
+                  }]
       }
     title: Response
     language: json

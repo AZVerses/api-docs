@@ -26,6 +26,13 @@ parameters:
         default:
         description: BUY-买,SELL-卖
         ranges:
+    -
+        name: limit
+        type: number
+        mandatory: false
+        default: '1000'
+        description: 限制数量
+        ranges: 1，1000
 content_markdown: >-
     #### **限流规则**
 
@@ -53,6 +60,7 @@ right_code_blocks:
                       "symbol": "BTC_USDT",
                       "orderId": "6216559590087220004",
                       "clientOrderId": "16559590087220001",
+                      "rfq": false,
                       "baseCurrency": "string",
                       "quoteCurrency": "string",
                       "side": "BUY",
@@ -68,6 +76,16 @@ right_code_blocks:
                       "avgPrice": "42350",
                       "fee": "string",
                       "feeCurrency": "string",
+                      "nftId": "string",
+                      "symbolType": "normal",
+                      "origRestFee": "string",
+                      "origFeeCurrency": "string",
+                      "platFormCurrencyFee": "string",
+                      "platFormCurrency": "string",
+                      "couponAmount": "string",
+                      "couponCurrency": "string",
+                      "couponDeductFee": "string",
+                      "closed": false,
                       "state": "NEW",
                       "time": 1655958915583,
                       "ip": "127.0.0.1",

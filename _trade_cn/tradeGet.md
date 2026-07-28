@@ -113,7 +113,13 @@ right_code_blocks:
                         "quoteCurrency": "USDT",            //报价币种类型
                         "fee": "0.5",                       //手续费资产金额
                         "feeCurrency": "USDT",              //手续费资产类型
-                        "takerMaker": "taker"               //takerMaker
+                        "takerMaker": "taker",              //takerMaker
+                        "symbolType": "normal",             //交易对类型
+                        "rfq": false,                       //是否RFQ成交
+                        "deductType": "COUPON",             //手续费抵扣类型：COUPON-抵扣券, PLATFORM_CURRENCY-平台币, null-无
+                        "deductFee": "0.1",                 //抵扣的手续费
+                        "couponAmount": "0.1",              //抵扣券使用额度
+                        "couponCurrency": "USDT"            //抵扣券币种
                       }
                     ]
                   }

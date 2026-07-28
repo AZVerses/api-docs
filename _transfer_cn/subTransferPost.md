@@ -61,6 +61,9 @@ parameters:
         description: 划出账户id
         ranges: 
 content_markdown: >-
+    > ## ⚠️ 该接口已下线
+
+    > **`POST /az/spot/balance/account/transfer` 已不再提供服务，请勿接入。** 本页仅为避免坏链而保留。
 
 
 left_code_blocks:

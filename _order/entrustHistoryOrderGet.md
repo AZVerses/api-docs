@@ -1,8 +1,8 @@
 ---
-title: Query historical orders
-position_number: 10
+title: Query entrust historical orders
+position_number: 18
 type: get
-description: /az/spot/history-order
+description: /az/spot/entrust-order/history
 parameters:
     -
         name: symbol
@@ -16,7 +16,14 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: "SPOT, PREDICTION"
+        description: "SPOT"
+        ranges:
+    -
+        name: type
+        type: string
+        mandatory: false
+        default:
+        description: "entrust order type, only ENTRUST_PROFIT, ENTRUST_TRACK"
         ranges:
     -
         name: side
@@ -26,18 +33,11 @@ parameters:
         description: BUY,SELL
         ranges:
     -
-        name: type
-        type: string
-        mandatory: false
-        default:
-        description: LIMIT, MARKET
-        ranges:
-    -
         name: state
         type: string
         mandatory: false
         default:
-        description: order <a href="#orderStatus">state</a>, <br> PARTIALLY_FILLED,<br> FILLED,   CANCELED,<br> REJECTED,EXPIRED
+        description: 'entrust order state: NEW, TRIGGERED, EXPIRED, CANCELED'
         ranges:
     -
         name: fromId
@@ -106,40 +106,36 @@ right_code_blocks:
               "result": {
                 "hasPrev": true,
                 "hasNext": true,
-                "items": [   //For field information, refer to the Get single interface
+                "items": [   //For field information, refer to the Get single entrust order interface
                   {
-                    "symbol": "BTC_USDT",
-                    "orderId": "6216559590087220004",
+                    "id": "6216559590087220004",
                     "clientOrderId": "16559590087220001",
-                    "rfq": false,
-                    "baseCurrency": "string",
-                    "quoteCurrency": "string",
-                    "side": "BUY",
-                    "type": "LIMIT",
-                    "timeInForce": "GTC",
+                    "accountId": 123456,
+                    "userId": "123456",
+                    "symbolId": 1001,
+                    "symbol": "BTC_USDT",
+                    "side": "1",
+                    "type": "3",
+                    "timeInForce": "1",
+                    "bizType": "1",
                     "price": "40000",
-                    "origQty": "2",
-                    "origQuoteQty": "48000",
-                    "executedQty": "1.2",
-                    "leavingQty": "string",
-                    "tradeBase": "2",
-                    "tradeQuote": "48000",
-                    "avgPrice": "42350",
-                    "fee": "string",
-                    "feeCurrency": "string",
-                    "nftId": "string",
-                    "symbolType": "normal",
-                    "origRestFee": "string",
-                    "origFeeCurrency": "string",
-                    "platFormCurrencyFee": "string",
-                    "platFormCurrency": "string",
-                    "couponAmount": "string",
-                    "couponCurrency": "string",
-                    "couponDeductFee": "string",
-                    "closed": false,
-                    "state": "NEW",
-                    "time": 1655958915583,
+                    "quantity": "2",
+                    "quoteQty": "48000",
+                    "triggerPrice": "41000",
+                    "currentPrice": "40500",
+                    "activePrice": "40000",
+                    "turnRate": "2",
+                    "priceDiff": "2",
+                    "extremePrice": "40000",
+                    "closed": true,
+                    "closedTime": 1655971400834,
+                    "state": "2",
+                    "activeState": "1",
+                    "triggerTime": 1655971400834,
+                    "triggerState": "1",
+                    "rejectReason": "string",
                     "ip": "127.0.0.1",
+                    "createdTime": 1655958915583,
                     "updatedTime": 1655958915583
                   }
                 ]

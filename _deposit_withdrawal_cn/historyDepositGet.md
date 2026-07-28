@@ -24,7 +24,7 @@ parameters:
         mandatory: false
         default:
         description: 充值记录的<a href="#depositWithdrawStatusCn">状态</a>
-        ranges: SUBMIT、REVIEW、AUDITED、PENDING、SUCCESS、FAIL、CANCEL
+        ranges: SUBMIT、REVIEW、AUDITED、AUDITED_AGAIN、PENDING、SUCCESS、FAIL、CANCEL
     -
         name: fromId
         type: long
@@ -90,6 +90,10 @@ right_code_blocks:
                          "currency": "xlm2",    //币种名称
                          "chain": "XLM",        //转账网络名称
                          "memo": "441824256",   //memo
+                         "toAccount": "SPOT",   //入账账户，例如 SPOT、FUTURES
+                         "swapCurrency": "usdt",//互换后币种（仅当充值资产被自动互换时返回，否则为 null）
+                         "swapAmount": "0.1",   //互换后数量，字符串类型（无互换时为 null）
+                         "swapPrice": "1",      //互换价格，字符串类型（无互换时为 null）
                          "status": "SUCCESS",   //充值状态
                          "amount": "0.1",       //充值金额
                          "confirmations": 12,   //区块确认数

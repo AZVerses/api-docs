@@ -40,7 +40,8 @@ right_code_blocks:
                   ],
                   "result": {
                     "address": "0xfa3abfa50eb2006f5be7831658b17aca240d8526",     //钱包地址
-                    "memo": ""
+                    "memo": "",
+                    "domainAddress": ""                                          //FIO 域名地址，仅 FIO 链返回，其它链为空
                   }
                 }
         title: Response

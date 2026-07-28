@@ -37,7 +37,9 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "cancelId": "6216559590087220004"
+                    "orderId": "6216559590087220004",       //订单ID
+                    "cancelId": "6216559590087220005",      //撤单ID
+                    "clientCancelId": "16559590087220001"   //客户端撤单ID
                   }
                 }
         title: Response

@@ -5,7 +5,7 @@ type: get
 description: /az/spot/balance
 parameters:
     -
-        name: 'currency '
+        name: currency
         type: string
         mandatory: true
         default:
@@ -31,12 +31,18 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "currency": "usdt",  
-                    "currencyId": 0,   
-                    "frozenAmount": 0,  
-                    "availableAmount": 0,  
-                    "totalAmount": 0,    
-                    "convertBtcAmount": 0  //Converted BTC amount
+                    "currency": "usdt",
+                    "currencyId": 0,
+                    "frozenAmount": "0",       //unavailable (freeze + lock + copy-trade + order + withdraw)
+                    "freeze": "0",             //freeze
+                    "lock": "0",               //lock
+                    "trade": "0",              //order (entrust)
+                    "withdraw": "0",           //withdraw
+                    "availableAmount": "0",    //available amount
+                    "totalAmount": "0",        //total amount
+                    "convertBtcAmount": "0",   //converted BTC amount
+                    "convertUsdtAmount": "0",  //converted USDT amount
+                    "convertAvailableUsdtAmount": "0"  //converted USDT available amount
                   }
                 }
         title: Response

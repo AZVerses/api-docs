@@ -9,42 +9,35 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: Unique id for idempotent processing
+        description: Unique id for idempotent processing. Only letters, numbers, '-' and '_' are allowed (regex ^[A-Za-z0-9-_]+$)
         ranges: Maximum length is 128
     -
         name: from
         type: enum
         mandatory: true
-        default: 
-        description: Fund transfer out account
-        ranges: <a href="#bizType">bizType enmu</a>
+        default:
+        description: Fund transfer out account. from and to must not be equal (FUND_015), out-of-range value reports FUND_021
+        ranges: SPOT / FUTURES_U
     -
         name: to
         type: enum
         mandatory: true
-        default: 
-        description: Fund transfer in account
-        ranges: <a href="#bizType">bizType enum</a>
+        default:
+        description: Fund transfer in account. from and to must not be equal (FUND_015), out-of-range value reports FUND_021
+        ranges: SPOT / FUTURES_U
     -
         name: currency
         type: string
         mandatory: true
         default:
-        description: Currency name must be all lowercase (usdt,btc)
-        ranges:
-    -
-        name: symbol
-        type: string
-        mandatory: false
-        default:
-        description: The transfer symbol must be all lowercase (this field must be passed if one of the transfer-in and transfer-out parties is leverage)
+        description: Currency name must be all lowercase (usdt,btc). Reports FUND_017 if the currency does not exist
         ranges:
     -
         name: amount
         type: bigDecimal
         mandatory: true
         default:
-        description: Transfer amount
+        description: Transfer amount. Must be a positive number; trailing zeros are stripped and precision is bounded by the currency maxPrecision (lower bound 10)
         ranges:
 
 content_markdown: >-

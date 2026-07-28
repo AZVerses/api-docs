@@ -143,7 +143,7 @@ right_code_blocks:
                         "index": "0",                       // 下标，从0开始 
                         "clientOrderId": "123",             // 客户端订单ID 
                         "orderId": "123",                   // 订单ID 
-                        "reject": "false",                  // 是否拒单 
+                        "rejected": false,                  // 是否拒单 
                         "reason": "invalid price precision" // 拒单原因 
                       }
                     ]

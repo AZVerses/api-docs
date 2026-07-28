@@ -15,7 +15,7 @@ parameters:
     -
         name: bizType
         type: string
-        mandatory: true
+        mandatory: false
         default:
         description: >-
             业务类型  SPOT-现货, PREDICTION-预测市场
@@ -26,6 +26,13 @@ parameters:
         mandatory: false
         default:
         description: BUY-买,SELL-卖
+        ranges:
+    -
+        name: mode
+        type: string
+        mandatory: false
+        default: CMD
+        description: '撤单模式：CMD-按指令批量撤销，ITERATOR-逐笔迭代撤销'
         ranges:
 content_markdown: >-
     #### **限流规则**

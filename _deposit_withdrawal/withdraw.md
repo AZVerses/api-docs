@@ -23,10 +23,10 @@ parameters:
     -
         name: 'chain'
         type: string
-        mandatory: false
+        mandatory: true
         default:
         description: >-
-                The name of the transfer network, which can be obtained from the interface of 'Get the supported currencies for deposit or withdrawal' interface
+                The name of the transfer network, which can be obtained from the interface of 'Get the supported currencies for deposit or withdrawal' interface. Required for on-chain withdrawal.
         ranges:
     -
         name: 'clientOrderId'
@@ -46,10 +46,10 @@ parameters:
     -
         name: 'address'
         type: string
-        mandatory: false
+        mandatory: true
         default:
         description: >-
-                Withdrawal address
+                Withdrawal address. Required — only on-chain withdrawal is supported; internal transfer is currently not supported.
         ranges: 
     -
         name: 'memo'
@@ -65,9 +65,11 @@ parameters:
         mandatory: false
         default:
         description: >-
-          Receiving user ID
+          Receiving user ID. Not supported — internal transfer is currently disabled, this parameter is ignored. Only on-chain withdrawal is supported.
 content_markdown: |-
                 Note: The parameters are placed in the body in the form of json
+
+                Note: Only on-chain withdrawal is supported. Internal transfer (toAccountId) is currently not supported; requests without an on-chain `address` will be rejected with "Internal transfer is not supported."
                 #### **Limit Flow Rules**
 
                 1/s/apikey

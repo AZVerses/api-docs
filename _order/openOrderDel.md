@@ -15,7 +15,7 @@ parameters:
     -
         name: bizType
         type: string
-        mandatory: true
+        mandatory: false
         default:
         description: "SPOT, PREDICTION"
         ranges:
@@ -25,6 +25,13 @@ parameters:
         mandatory: false
         default:
         description: BUY,SELL
+        ranges:
+    -
+        name: mode
+        type: string
+        mandatory: false
+        default: CMD
+        description: 'cancel mode: CMD (bulk cancel by command), ITERATOR (cancel one by one)'
         ranges:
 content_markdown: >-
     #### **Limit Flow Rules**

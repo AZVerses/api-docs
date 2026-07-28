@@ -42,15 +42,20 @@ right_code_blocks:
                     "ma": [],
                     "result": {      
                         "id": 100,                     //Withdrawal record id
-                        "clientOrderId": 10,           //Client ID
-                        "type": 0,                     //Type CHAIN_TRANSFER-Blockchain withdrawal INTERNAL_TRANSFER-Internal withdrawal
+                        "clientOrderId": "10",         //Client ID, string type
+                        "type": "CHAIN_TRANSFER",      //Withdrawal type, string enum name: CHAIN_TRANSFER-on-chain withdrawal, INTERNAL_TRANSFER-internal transfer, CMS_TRANSFER-manual credit via admin console
                         "currency": "btc",             //currency
-                        "address": "xxxxx",            //Withdrawal address
-                        "status": "REVIEW",            //Refer to public module-Deposit/withdrawal record status
-                        "amount": 0.1,                 //Withdrawal Amount
-                        "fee": 0.0001,                 //Withdrawal Fee
                         "chain": "Tron",               //Chain
+                        "address": "xxxxx",            //Withdrawal address
                         "memo": "yyyyy",               //memo
+                        "needSwap": false,             //Whether a USDT/USDC swap is required
+                        "fromAccount": "SPOT",         //Funding source account, e.g. SPOT, FUTURES
+                        "swapCurrency": null,          //Currency after swap (null when no swap)
+                        "swapAmount": null,            //Amount after swap, string type (null when no swap)
+                        "swapPrice": null,             //Swap price, string type (null when no swap)
+                        "status": "REVIEW",            //Refer to public module-Deposit/withdrawal record status
+                        "amount": "0.1",               //Withdrawal Amount, string type
+                        "fee": "0.0001",               //Withdrawal Fee, string type
                         "confirmations": 2,            //Number of block confirmations
                         "transactionId": "490267492",  //Transaction hash
                         "createdTime": 1737093343000   //Withdrawal application time, timestamp in milliseconds

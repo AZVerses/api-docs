@@ -37,7 +37,7 @@ tables:
         mandatory: false
         default:
         description: 撤单列表，订单Id的集合
-        ranges: 最大支持100个  
+        ranges: 最大支持300个  
   - title: OrderCreateReqDTO
     data:
       -
@@ -123,11 +123,11 @@ content_markdown: |-
 right_code_blocks:
   - code_block: |-
       {
-        "error": {
-          "code": "",
-          "msg": ""
-        },
-        "msgInfo": "success",
+        "rc": 0,
+        "mc": "string",
+        "ma": [
+          {}
+        ],
         "result": [{
                       "createOrdersResponse": [
                         {
@@ -142,8 +142,7 @@ right_code_blocks:
                           "cancelState": "ORDER_000" //参考响应代码
                         }
                       ]      
-                  }],
-        "returnCode": 0
+                  }]
       }
     title: Response
     language: json

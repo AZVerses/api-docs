@@ -24,7 +24,7 @@ parameters:
         mandatory: false
         default:
         description: The <a href="#depositWithdrawStatus">status</a> of deposit
-        ranges: SUBMIT、REVIEW、AUDITED、PENDING、SUCCESS、FAIL、CANCEL
+        ranges: SUBMIT、REVIEW、AUDITED、AUDITED_AGAIN、PENDING、SUCCESS、FAIL、CANCEL
     -
         name: fromId
         type: long
@@ -90,6 +90,10 @@ right_code_blocks:
                          "currency": "xlm2",    //Currency name
                          "chain": "XLM",        //Transfer Network
                          "memo": "441824256",   //memo
+                         "toAccount": "SPOT",   //Account credited, e.g. SPOT, FUTURES
+                         "swapCurrency": "usdt",//Currency after swap (only when the deposited asset was auto-swapped, otherwise null)
+                         "swapAmount": "0.1",   //Amount after swap, string type (null when no swap)
+                         "swapPrice": "1",      //Swap price, string type (null when no swap)
                          "status": "SUCCESS",   //The status of deposit
                          "amount": "0.1",       //Deposit amount
                          "confirmations": 12,   //Number of block confirmations

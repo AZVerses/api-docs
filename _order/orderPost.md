@@ -37,7 +37,7 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: effective way:GTC, FOK, IOC, GTX
+        description: effective way:GTC, FOK, IOC, GTX, GTX_SELF_CANCEL
         ranges:
     -
         name: bizType
@@ -113,8 +113,8 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "orderId": "6216559590087220004",
-                    "ip": "127.0.0.1",                  // ip address
+                    "orderId": "6216559590087220004",       // order id
+                    "clientOrderId": "16559590087220001"    // client order id
                   }
                 }
         title: Response

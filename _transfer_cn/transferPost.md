@@ -9,42 +9,35 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: 唯一id 用作重复请求幂等
+        description: 唯一id 用作重复请求幂等。仅允许字母、数字、'-' 和 '_'（正则 ^[A-Za-z0-9-_]+$）
         ranges: 最大长度为128
     -
         name: from
         type: enum
         mandatory: true
         default:
-        description: 划出业务账户
-        ranges: <a href="#bizTypeCn">bizType 枚举</a>
+        description: 划出业务账户。from 与 to 不能相同（FUND_015），取值越界报 FUND_021
+        ranges: SPOT / FUTURES_U
     -
         name: to
         type: enum
         mandatory: true
         default:
-        description: 划入业务账户
-        ranges: <a href="#bizTypeCn">bizType 枚举</a>
+        description: 划入业务账户。from 与 to 不能相同（FUND_015），取值越界报 FUND_021
+        ranges: SPOT / FUTURES_U
     -
         name: currency
         type: string
         mandatory: true
         default:
-        description: 币种名称必须全部小写（usdt，btc）
-        ranges:
-    -
-        name: symbol
-        type: string
-        mandatory: false
-        default:
-        description: 划转交易对必须全部小写（划入划出有一方是杠杆此字段必传）
+        description: 币种名称必须全部小写（usdt，btc）。币种不存在报 FUND_017
         ranges:
     -
         name: amount
         type: bigDecimal
         mandatory: true
         default:
-        description: 划转的数量
+        description: 划转的数量。必须为正数；末尾零会被去除，精度受币种 maxPrecision 约束（下限 10）
         ranges:
 
 content_markdown: >-

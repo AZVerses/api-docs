@@ -61,6 +61,9 @@ parameters:
         description: Transfer-out account id
         ranges: 
 content_markdown: >-
+    > ## ⚠️ This endpoint is offline
+
+    > **`POST /az/spot/balance/account/transfer` is no longer available.** Do not integrate against it. This page is retained only to avoid broken links.
 
 
 left_code_blocks:

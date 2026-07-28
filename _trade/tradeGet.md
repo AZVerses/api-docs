@@ -112,7 +112,13 @@ right_code_blocks:
                         "quoteCurrency": "USDT",  
                         "fee": "0.5",   
                         "feeCurrency": "USDT", 
-                        "takerMaker": "taker"  //takerMaker
+                        "takerMaker": "taker",         //takerMaker
+                        "symbolType": "normal",        //symbol type
+                        "rfq": false,                  //whether it is an RFQ trade
+                        "deductType": "COUPON",        //fee deduction type: COUPON, PLATFORM_CURRENCY, null
+                        "deductFee": "0.1",            //deducted fee
+                        "couponAmount": "0.1",         //coupon amount used
+                        "couponCurrency": "USDT"       //coupon currency
                       }
                     ]
                   }

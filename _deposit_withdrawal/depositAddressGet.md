@@ -41,7 +41,8 @@ right_code_blocks:
                   ],
                   "result": {
                     "address": "0xfa3abfa50eb2006f5be7831658b17aca240d8526",     //wallet address
-                    "memo": ""
+                    "memo": "",
+                    "domainAddress": ""                                          //FIO domain address, only returned for the FIO chain; empty for other chains
                   }
                 }
         title: Response

@@ -23,10 +23,10 @@ parameters:
     -
         name: 'chain'
         type: string
-        mandatory: false
+        mandatory: true
         default:
         description: >-
-                转账网络名称，可从'获取AZ可充提的币种'接口中获取
+                转账网络名称，可从'获取AZ可充提的币种'接口中获取。链上提现必填。
         ranges:
     -
         name: 'clientOrderId'
@@ -47,10 +47,10 @@ parameters:
     -
         name: 'address'
         type: string
-        mandatory: false
+        mandatory: true
         default:
         description: >-
-                提现地址
+                提现地址。必填——目前仅支持链上提现，内部转账暂不支持。
         ranges: 
     -
         name: 'memo'
@@ -66,10 +66,12 @@ parameters:
         mandatory: false
         default:
         description: >-
-          收款用户ID
+          收款用户ID。暂不支持——内部转账当前已禁用，该参数会被忽略，仅支持链上提现。
         ranges:
 content_markdown: |-
                 注意：参数以json形式放在body中
+
+                注意：目前仅支持链上提现，内部转账（toAccountId）暂不支持；未携带链上 `address` 的请求会被拒绝并返回 "Internal transfer is not supported."
                 #### **限流规则**
 
                 1/s/apikey

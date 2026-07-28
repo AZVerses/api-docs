@@ -37,7 +37,7 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: 有效方式 GTC, FOK, IOC, GTX
+        description: 有效方式 GTC, FOK, IOC, GTX, GTX_SELF_CANCEL
         ranges:
     -
         name: bizType
@@ -114,8 +114,8 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "orderId": "6216559590087220004",   //订单ID
-                    "ip": "127.0.0.1"                   //ip地址
+                    "orderId": "6216559590087220004",       //订单ID
+                    "clientOrderId": "16559590087220001"    //客户端订单号
                   }
                 }
         title: Response

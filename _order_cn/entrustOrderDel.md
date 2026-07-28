@@ -1,23 +1,23 @@
 ---
-title: Cancell order
-position_number: 3
+title: 委托撤单
+position_number: 15
 type: delete
 split: -------------------------------------
-description: /az/spot/order/{orderId}
+description: /az/spot/entrust-order/{entrustOrderId}
 parameters:
     -
-        name: orderId
+        name: entrustOrderId
         type: number
         mandatory: true
         default:
-        description: 
+        description: 委托订单ID
         ranges:
 content_markdown: >-
 
 left_code_blocks:
     -
         code_block: |-
-            public String orderDel(){
+            public String entrustOrderDel(){
 
 
             }
@@ -37,9 +37,9 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "orderId": "6216559590087220004",       //order id
-                    "cancelId": "6216559590087220005",      //cancel id
-                    "clientCancelId": "16559590087220001"   //client cancel id
+                    "orderId": "6216559590087220004",       //委托订单ID
+                    "cancelId": "6216559590087220005",      //撤单ID
+                    "clientCancelId": "16559590087220001"   //客户端撤单ID
                   }
                 }
         title: Response

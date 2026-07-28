@@ -55,8 +55,9 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "orderId": "6216559590087220004",   //订单ID
-                    "modifyId": "407329711723834560"    //修改ID
+                    "orderId": "6216559590087220004",       //订单ID
+                    "modifyId": "407329711723834560",       //修改ID
+                    "clientModifyId": "16559590087220001"   //客户端修改ID
                   }
                 }
         title: Response
