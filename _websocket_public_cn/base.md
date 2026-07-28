@@ -27,10 +27,7 @@ content_markdown: |-
     ---
 
 
-    #### **协议（700 行情中心重构）**
-
-
-    这是行情中心重构后的公共行情 WebSocket 协议。连接 / 订阅 / 心跳 / 推送 / 应答均与旧版不同，字段一律短键。
+    #### **协议**
 
 
     * 订阅：`{"method":"subscribe","params":["ticker@btc_usdt"],"id":<n>}`；应答 `{"id":<n>,"result":"ok"}` 或 `{"id":<n>,"error":"<reason>"}`。

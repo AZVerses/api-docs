@@ -27,10 +27,7 @@ content_markdown: |-
     ---
 
 
-    #### **Protocol (700 market-center rebuild)**
-
-
-    This is the rebuilt public market WebSocket protocol. Connection / subscription / heartbeat / push / ack are all different from the old version and the field keys are short keys.
+    #### **Protocol**
 
 
     * Subscribe with `{"method":"subscribe","params":["ticker@btc_usdt"],"id":<n>}`; ack is `{"id":<n>,"result":"ok"}` or `{"id":<n>,"error":"<reason>"}`.
