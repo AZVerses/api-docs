@@ -21,7 +21,7 @@ content_markdown: |-
 
     rate: once per second (1000ms)
 
-    This channel keeps the legacy `{topic,event,data}` envelope (it is not a flat `ch` frame).
+    This is a flat `ch` frame (same as the other channels); the price is pushed strictly once per second.
 left_code_blocks:
     -
         code_block:
@@ -31,13 +31,10 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "mark_price", 
-                    "event": "mark_price@btc_usdt", 
-                    "data": {
-                        "s":"btc_usdt", //trading pair
-                        "p":"50000",    //price
-                        "t":123124124   //timestamp
-                   }
+                    "ch": "mark_price@btc_usdt", // channel
+                    "s": "btc_usdt",             // trading pair
+                    "p": "63584.0",              // mark price
+                    "t": 1785221435078           // timestamp
                 }
         title: Response
         language: json

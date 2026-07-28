@@ -21,7 +21,7 @@ content_markdown: |-
 
     速率: 每秒一次（1000ms）
 
-    此频道保留旧的 `{topic,event,data}` 信封（非扁平 `ch` 帧）。
+    此频道为扁平 `ch` 帧（与其它频道一致），价格严格每秒下发。
 left_code_blocks:
     -
         code_block:
@@ -31,13 +31,10 @@ right_code_blocks:
     -
         code_block: |-
                 {
-                    "topic": "index_price", 
-                    "event": "index_price@btc_usdt", 
-                    "data": {
-                        "s":"btc_usdt", //交易对
-                        "p":"50000",    //价格
-                        "t":123124124   //时间戳
-                    }
+                    "ch": "index_price@btc_usdt", // 频道
+                    "s": "btc_usdt",              // 交易对
+                    "p": "63601.87",              // 指数价
+                    "t": 1785221435078            // 时间戳
                 }
         title: Response
         language: json

@@ -40,7 +40,7 @@ content_markdown: |-
 
     * 全深度采用订阅即下发快照 + 增量（服务端在重启 / 客户端落后时主动重发快照）；无需 REST 拉快照。
 
-    * 合约专属：`ticker` 帧带 `ix`/`mx`（指数 / 标记价），并提供独立 `fundrate@<symbol>` 频道；`index_price@<symbol>` / `mark_price@<symbol>` 频道保留旧的 `{topic,event,data}` 信封（非扁平帧）。
+    * 合约专属：`ticker` 帧带 `ix`/`mx`（指数 / 标记价）；提供独立 `fundrate@<symbol>` 频道；`index_price@<symbol>` / `mark_price@<symbol>` 为独立的扁平 `ch` 频道，严格每秒下发。
 left_code_blocks:
     -
         code_block:

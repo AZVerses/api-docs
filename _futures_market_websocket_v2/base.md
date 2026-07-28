@@ -40,7 +40,7 @@ content_markdown: |-
 
     * Full depth uses subscribe-time snapshot + delta (the server re-pushes a snapshot on restart / when the client falls behind); no REST snapshot pull is needed.
 
-    * Futures extras: the `ticker` frame carries `ix`/`mx` (index / mark price) and a dedicated `fundrate@<symbol>` channel is available; the `index_price@<symbol>` / `mark_price@<symbol>` channels keep the legacy `{topic,event,data}` envelope (they are not flat frames).
+    * Futures extras: the `ticker` frame carries `ix`/`mx` (index / mark price); a dedicated `fundrate@<symbol>` channel is available; and `index_price@<symbol>` / `mark_price@<symbol>` are separate flat-`ch` channels pushed strictly once per second.
 left_code_blocks:
     -
         code_block:
